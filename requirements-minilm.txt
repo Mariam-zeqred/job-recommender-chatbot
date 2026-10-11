@@ -1,0 +1,2 @@
+# Optional: sentence-embedding backend. Pulls PyTorch (~1 GB). Not installed in CI.
+sentence-transformers>=3.0

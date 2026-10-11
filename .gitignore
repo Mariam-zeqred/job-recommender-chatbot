@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.pyc
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+build/
+dist/
+
+# Secrets and local config
+.env
+.env.*
+!.env.example
+*.log
+*.pem
+*.key
+
+# Downloaded word vectors and anything over 10 MB
+data/vectors/
+*.gz
+*.zip
+*.parquet
+*.bin

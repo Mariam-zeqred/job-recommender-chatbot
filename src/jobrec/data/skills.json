@@ -1,0 +1,628 @@
+{
+ "python": {
+  "category": "language",
+  "aliases": [
+   "python3",
+   "py"
+  ]
+ },
+ "c": {
+  "category": "language",
+  "aliases": [
+   "c language",
+   "ansi c",
+   "c99",
+   "c11"
+  ]
+ },
+ "c++": {
+  "category": "language",
+  "aliases": [
+   "cpp",
+   "c plus plus"
+  ]
+ },
+ "java": {
+  "category": "language",
+  "aliases": []
+ },
+ "javascript": {
+  "category": "language",
+  "aliases": [
+   "js",
+   "ecmascript"
+  ]
+ },
+ "typescript": {
+  "category": "language",
+  "aliases": [
+   "ts"
+  ]
+ },
+ "dart": {
+  "category": "language",
+  "aliases": []
+ },
+ "sql": {
+  "category": "language",
+  "aliases": [
+   "postgresql",
+   "postgres",
+   "mysql",
+   "sqlite"
+  ]
+ },
+ "bash": {
+  "category": "language",
+  "aliases": [
+   "shell scripting",
+   "shell"
+  ]
+ },
+ "rust": {
+  "category": "language",
+  "aliases": []
+ },
+ "go": {
+  "category": "language",
+  "aliases": [
+   "golang"
+  ]
+ },
+ "matlab": {
+  "category": "language",
+  "aliases": [
+   "simulink"
+  ]
+ },
+ "esp32": {
+  "category": "embedded",
+  "aliases": [
+   "esp-32",
+   "esp32-s3",
+   "esp-idf"
+  ]
+ },
+ "stm32": {
+  "category": "embedded",
+  "aliases": [
+   "stm32cube",
+   "cortex-m"
+  ]
+ },
+ "arduino": {
+  "category": "embedded",
+  "aliases": []
+ },
+ "freertos": {
+  "category": "embedded",
+  "aliases": [
+   "rtos",
+   "real-time operating system"
+  ]
+ },
+ "uart": {
+  "category": "embedded",
+  "aliases": [
+   "serial communication"
+  ]
+ },
+ "i2c": {
+  "category": "embedded",
+  "aliases": [
+   "i²c",
+   "iic"
+  ]
+ },
+ "spi": {
+  "category": "embedded",
+  "aliases": []
+ },
+ "can bus": {
+  "category": "embedded",
+  "aliases": [
+   "can",
+   "canbus"
+  ]
+ },
+ "pcb design": {
+  "category": "embedded",
+  "aliases": [
+   "kicad",
+   "altium",
+   "eagle"
+  ]
+ },
+ "oscilloscope": {
+  "category": "embedded",
+  "aliases": [
+   "logic analyzer",
+   "logic analyser"
+  ]
+ },
+ "autosar": {
+  "category": "embedded",
+  "aliases": []
+ },
+ "bootloader": {
+  "category": "embedded",
+  "aliases": [
+   "ota updates",
+   "ota",
+   "over-the-air"
+  ]
+ },
+ "low power design": {
+  "category": "embedded",
+  "aliases": [
+   "deep sleep",
+   "power optimisation",
+   "power optimization"
+  ]
+ },
+ "mqtt": {
+  "category": "iot",
+  "aliases": []
+ },
+ "lorawan": {
+  "category": "iot",
+  "aliases": [
+   "lora"
+  ]
+ },
+ "ble": {
+  "category": "iot",
+  "aliases": [
+   "bluetooth low energy",
+   "bluetooth"
+  ]
+ },
+ "zigbee": {
+  "category": "iot",
+  "aliases": []
+ },
+ "modbus": {
+  "category": "iot",
+  "aliases": [
+   "modbus rtu",
+   "modbus tcp"
+  ]
+ },
+ "aws iot core": {
+  "category": "iot",
+  "aliases": [
+   "aws iot"
+  ]
+ },
+ "tls": {
+  "category": "iot",
+  "aliases": [
+   "x.509",
+   "x509",
+   "ssl"
+  ]
+ },
+ "sensors": {
+  "category": "iot",
+  "aliases": [
+   "sensor integration",
+   "sensor calibration"
+  ]
+ },
+ "node-red": {
+  "category": "iot",
+  "aliases": [
+   "nodered"
+  ]
+ },
+ "pandas": {
+  "category": "data",
+  "aliases": []
+ },
+ "numpy": {
+  "category": "data",
+  "aliases": []
+ },
+ "scikit-learn": {
+  "category": "data",
+  "aliases": [
+   "sklearn",
+   "scikit learn"
+  ]
+ },
+ "pytorch": {
+  "category": "data",
+  "aliases": [
+   "torch"
+  ]
+ },
+ "tensorflow": {
+  "category": "data",
+  "aliases": [
+   "keras",
+   "tflite",
+   "tensorflow lite"
+  ]
+ },
+ "opencv": {
+  "category": "data",
+  "aliases": [
+   "computer vision"
+  ]
+ },
+ "yolo": {
+  "category": "data",
+  "aliases": [
+   "object detection",
+   "yolov8",
+   "yolov5"
+  ]
+ },
+ "nlp": {
+  "category": "data",
+  "aliases": [
+   "natural language processing",
+   "transformers",
+   "llm",
+   "large language models"
+  ]
+ },
+ "time series": {
+  "category": "data",
+  "aliases": [
+   "time-series",
+   "forecasting",
+   "anomaly detection"
+  ]
+ },
+ "statistics": {
+  "category": "data",
+  "aliases": [
+   "statistical analysis",
+   "hypothesis testing",
+   "a/b testing"
+  ]
+ },
+ "data visualisation": {
+  "category": "data",
+  "aliases": [
+   "data visualization",
+   "matplotlib",
+   "plotly",
+   "seaborn"
+  ]
+ },
+ "power bi": {
+  "category": "data",
+  "aliases": [
+   "tableau",
+   "dashboards",
+   "looker"
+  ]
+ },
+ "excel": {
+  "category": "data",
+  "aliases": [
+   "spreadsheets",
+   "google sheets"
+  ]
+ },
+ "spark": {
+  "category": "data",
+  "aliases": [
+   "pyspark",
+   "apache spark"
+  ]
+ },
+ "airflow": {
+  "category": "data",
+  "aliases": [
+   "apache airflow",
+   "dagster",
+   "prefect"
+  ]
+ },
+ "etl": {
+  "category": "data",
+  "aliases": [
+   "elt",
+   "data pipelines",
+   "data pipeline"
+  ]
+ },
+ "mlops": {
+  "category": "data",
+  "aliases": [
+   "mlflow",
+   "model deployment",
+   "model monitoring"
+  ]
+ },
+ "feature engineering": {
+  "category": "data",
+  "aliases": []
+ },
+ "jupyter": {
+  "category": "data",
+  "aliases": [
+   "notebooks"
+  ]
+ },
+ "aws": {
+  "category": "cloud",
+  "aliases": [
+   "amazon web services",
+   "ec2",
+   "s3",
+   "lambda",
+   "dynamodb"
+  ]
+ },
+ "azure": {
+  "category": "cloud",
+  "aliases": [
+   "microsoft azure"
+  ]
+ },
+ "gcp": {
+  "category": "cloud",
+  "aliases": [
+   "google cloud",
+   "google cloud platform"
+  ]
+ },
+ "docker": {
+  "category": "cloud",
+  "aliases": [
+   "containers",
+   "containerisation",
+   "containerization"
+  ]
+ },
+ "kubernetes": {
+  "category": "cloud",
+  "aliases": [
+   "k8s",
+   "helm"
+  ]
+ },
+ "terraform": {
+  "category": "cloud",
+  "aliases": [
+   "infrastructure as code",
+   "iac",
+   "cloudformation",
+   "cdk"
+  ]
+ },
+ "ci/cd": {
+  "category": "cloud",
+  "aliases": [
+   "github actions",
+   "gitlab ci",
+   "jenkins",
+   "continuous integration"
+  ]
+ },
+ "linux": {
+  "category": "cloud",
+  "aliases": [
+   "ubuntu",
+   "debian"
+  ]
+ },
+ "monitoring": {
+  "category": "cloud",
+  "aliases": [
+   "grafana",
+   "prometheus",
+   "cloudwatch",
+   "observability"
+  ]
+ },
+ "networking": {
+  "category": "cloud",
+  "aliases": [
+   "tcp/ip",
+   "dns",
+   "vpc",
+   "firewalls"
+  ]
+ },
+ "fastapi": {
+  "category": "web",
+  "aliases": []
+ },
+ "django": {
+  "category": "web",
+  "aliases": [
+   "drf",
+   "django rest framework"
+  ]
+ },
+ "flask": {
+  "category": "web",
+  "aliases": []
+ },
+ "rest apis": {
+  "category": "web",
+  "aliases": [
+   "rest",
+   "restful",
+   "rest api",
+   "http apis",
+   "openapi"
+  ]
+ },
+ "graphql": {
+  "category": "web",
+  "aliases": []
+ },
+ "node.js": {
+  "category": "web",
+  "aliases": [
+   "nodejs",
+   "node",
+   "express"
+  ]
+ },
+ "react": {
+  "category": "web",
+  "aliases": [
+   "react.js",
+   "reactjs",
+   "next.js"
+  ]
+ },
+ "html/css": {
+  "category": "web",
+  "aliases": [
+   "html",
+   "css",
+   "html5",
+   "css3",
+   "tailwind"
+  ]
+ },
+ "flutter": {
+  "category": "mobile",
+  "aliases": []
+ },
+ "firebase": {
+  "category": "mobile",
+  "aliases": [
+   "firestore",
+   "realtime database",
+   "rtdb"
+  ]
+ },
+ "android": {
+  "category": "mobile",
+  "aliases": [
+   "kotlin"
+  ]
+ },
+ "ios": {
+  "category": "mobile",
+  "aliases": [
+   "swift"
+  ]
+ },
+ "websockets": {
+  "category": "web",
+  "aliases": [
+   "websocket",
+   "socket.io"
+  ]
+ },
+ "redis": {
+  "category": "web",
+  "aliases": [
+   "caching",
+   "memcached"
+  ]
+ },
+ "mongodb": {
+  "category": "web",
+  "aliases": [
+   "nosql"
+  ]
+ },
+ "pid control": {
+  "category": "control",
+  "aliases": [
+   "pid",
+   "control theory",
+   "control systems",
+   "closed-loop control"
+  ]
+ },
+ "signal processing": {
+  "category": "control",
+  "aliases": [
+   "dsp",
+   "digital signal processing",
+   "filtering",
+   "kalman"
+  ]
+ },
+ "plc": {
+  "category": "control",
+  "aliases": [
+   "ladder logic",
+   "scada",
+   "siemens tia"
+  ]
+ },
+ "thermodynamics": {
+  "category": "control",
+  "aliases": [
+   "heat transfer",
+   "hvac"
+  ]
+ },
+ "electronics": {
+  "category": "control",
+  "aliases": [
+   "circuit design",
+   "analog electronics",
+   "analogue electronics",
+   "power electronics"
+  ]
+ },
+ "unit testing": {
+  "category": "process",
+  "aliases": [
+   "pytest",
+   "unittest",
+   "tdd",
+   "test-driven development"
+  ]
+ },
+ "git": {
+  "category": "process",
+  "aliases": [
+   "github",
+   "gitlab",
+   "version control"
+  ]
+ },
+ "agile": {
+  "category": "process",
+  "aliases": [
+   "scrum",
+   "kanban",
+   "jira"
+  ]
+ },
+ "selenium": {
+  "category": "process",
+  "aliases": [
+   "playwright",
+   "cypress",
+   "end-to-end testing",
+   "e2e testing"
+  ]
+ },
+ "technical writing": {
+  "category": "process",
+  "aliases": [
+   "documentation"
+  ]
+ },
+ "english": {
+  "category": "process",
+  "aliases": [
+   "fluent english",
+   "english language"
+  ]
+ },
+ "arabic": {
+  "category": "process",
+  "aliases": []
+ },
+ "german": {
+  "category": "process",
+  "aliases": []
+ }
+}
