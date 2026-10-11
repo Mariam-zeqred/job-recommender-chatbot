@@ -63,6 +63,7 @@ def evaluate(rec: Recommender, queries, relevant) -> dict:
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--quick", action="store_true", help="TF-IDF only, no JSON written")
+    parser.add_argument("--figure", action="store_true", help="also write figures/eval_p5.png")
     args = parser.parse_args(argv)
     postings = load_postings()
     queries, relevant = load_eval()
@@ -91,7 +92,40 @@ def main(argv: list[str] | None = None) -> int:
             + "\n"
         )
         print(f"wrote {OUT}")
+        if args.figure:
+            make_figure(rows, float(chance))
     return 0
+
+
+def make_figure(rows: list[dict], chance: float) -> None:
+    """Grouped bars of P@5 per embedder and alpha, with the chance level as a line."""
+    import matplotlib
+
+    matplotlib.use("Agg")
+    import matplotlib.pyplot as plt
+
+    embedders = list(dict.fromkeys(r["embedder"] for r in rows))
+    fig, ax = plt.subplots(figsize=(6.4, 3.6), dpi=150)
+    width = 0.8 / len(ALPHAS)
+    for j, alpha in enumerate(ALPHAS):
+        vals = [
+            next(r["p@5"] for r in rows if r["embedder"] == e and r["alpha"] == alpha)
+            for e in embedders
+        ]
+        xs = [i + (j - (len(ALPHAS) - 1) / 2) * width for i in range(len(embedders))]
+        bars = ax.bar(xs, vals, width * 0.95, label=f"alpha = {alpha}")
+        ax.bar_label(bars, fmt="%.2f", fontsize=7, padding=1)
+    ax.axhline(chance, color="grey", ls="--", lw=1, label=f"chance ({chance:.2f})")
+    ax.set_xticks(range(len(embedders)), embedders)
+    ax.set_ylim(0, 1.12)
+    ax.set_ylabel("precision@5 (50 queries)")
+    ax.set_title("Recommender precision@5 on the synthetic evaluation set")
+    ax.legend(fontsize=8, ncol=2, loc="lower right")
+    ax.spines[["top", "right"]].set_visible(False)
+    fig.tight_layout()
+    path = OUT.parent / "eval_p5.png"
+    fig.savefig(path)
+    print(f"wrote {path}")
 
 
 if __name__ == "__main__":

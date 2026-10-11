@@ -58,8 +58,8 @@ and returns the next question, then a summary after the last one.
 For a CV mentioning ESP32, C, FreeRTOS, MQTT, Flutter, Firebase, pandas and scikit-learn the
 top hits (TF-IDF, α = 0.5) are IoT-engineer and ML-engineer postings, e.g.
 `IoT Solutions Engineer — matches c, esp32, mqtt, python; missing linux, tls`. The interview for
-that posting asks eight questions: an intro, one per required skill (skill-specific question
-where the bank has one, e.g. MQTT QoS/retained/last-will, otherwise a category template), one
+that posting asks eight questions: an intro, one per required skill (a skill-specific question
+for 23 skills, e.g. MQTT QoS/retained/last-will, otherwise a category template), one
 "gap" question about a missing skill, and one behavioural question. Each answer gets a 0–100
 score (60 % expected-keyword coverage, 25 % length up to 60 words, 15 % for a concrete example),
 the keywords it missed, and a follow-up.
@@ -79,6 +79,8 @@ average 41.7 relevant postings per query, chance P@k = 0.083).
 | glove | 0.0 | 0.60 | 0.57 | 0.53 | 0.68 |
 | glove | 0.5 | 0.96 | 0.96 | 0.93 | 0.97 |
 | glove | 1.0 | 0.94 | 0.94 | 0.91 | 0.96 |
+
+![precision@5 per embedder and alpha](figures/eval_p5.png)
 
 What the data supports:
 
@@ -114,7 +116,7 @@ numbers here**: the model could not be downloaded in the sandbox. TODO.md item 1
 ## Next steps
 
 See TODO.md: real postings dataset through the same loader, MiniLM numbers, a hand-judged
-subset of labels, a results figure, more skill-specific interview questions.
+subset of labels, the LLM feedback path, a Docker build check.
 
 ## Related
 

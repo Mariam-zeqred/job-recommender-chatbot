@@ -22,7 +22,7 @@ vectors:
 
 # Precision@k of each embedder on data/eval (writes figures/eval_results.json).
 eval:
-	$(PY) scripts/evaluate.py
+	$(PY) scripts/evaluate.py --figure
 
 serve:
 	$(PY) -m uvicorn jobrec.api:app --app-dir src --reload --port 8000

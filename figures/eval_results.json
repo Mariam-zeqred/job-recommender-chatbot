@@ -9,7 +9,7 @@
    "n_queries": 50,
    "embedder": "tfidf",
    "alpha": 0.0,
-   "seconds": 0.36
+   "seconds": 0.32
   },
   {
    "p@1": 0.98,
@@ -19,7 +19,7 @@
    "n_queries": 50,
    "embedder": "tfidf",
    "alpha": 0.5,
-   "seconds": 0.35
+   "seconds": 0.34
   },
   {
    "p@1": 0.94,
@@ -29,7 +29,7 @@
    "n_queries": 50,
    "embedder": "tfidf",
    "alpha": 1.0,
-   "seconds": 0.3
+   "seconds": 0.35
   },
   {
    "p@1": 0.6,
@@ -39,7 +39,7 @@
    "n_queries": 50,
    "embedder": "glove",
    "alpha": 0.0,
-   "seconds": 1.78
+   "seconds": 1.76
   },
   {
    "p@1": 0.96,
@@ -49,7 +49,7 @@
    "n_queries": 50,
    "embedder": "glove",
    "alpha": 0.5,
-   "seconds": 1.83
+   "seconds": 1.89
   },
   {
    "p@1": 0.94,
@@ -59,7 +59,7 @@
    "n_queries": 50,
    "embedder": "glove",
    "alpha": 1.0,
-   "seconds": 1.57
+   "seconds": 1.49
   }
  ]
 }

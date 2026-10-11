@@ -1,83 +1,483 @@
 {
  "_comment": "Question templates for the mock interview. {skill} is replaced by the required skill. 'keywords' are the terms a good answer is expected to touch; the rule-based scorer counts them.",
  "intro": [
-  {"text": "Tell me briefly about your background and why you are interested in the {title} role at {company}.",
-   "keywords": ["experience", "project", "because", "team", "learn"]}
+  {
+   "text": "Tell me briefly about your background and why you are interested in the {title} role at {company}.",
+   "keywords": [
+    "experience",
+    "project",
+    "because",
+    "team",
+    "learn"
+   ]
+  }
  ],
  "by_category": {
   "language": [
-   {"text": "Describe a project where you used {skill} seriously. What was hard about it and how did you structure the code?",
-    "keywords": ["project", "module", "function", "test", "debug", "structure"]},
-   {"text": "How do you make {skill} code easy for a colleague to read and maintain?",
-    "keywords": ["naming", "function", "comment", "test", "review", "small"]}
+   {
+    "text": "Describe a project where you used {skill} seriously. What was hard about it and how did you structure the code?",
+    "keywords": [
+     "project",
+     "module",
+     "function",
+     "test",
+     "debug",
+     "structure"
+    ]
+   },
+   {
+    "text": "How do you make {skill} code easy for a colleague to read and maintain?",
+    "keywords": [
+     "naming",
+     "function",
+     "comment",
+     "test",
+     "review",
+     "small"
+    ]
+   }
   ],
   "embedded": [
-   {"text": "Walk me through how you would bring up and debug a new sensor over {skill}. What tools do you reach for first?",
-    "keywords": ["datasheet", "oscilloscope", "logic analyser", "register", "timing", "driver"]},
-   {"text": "What goes wrong with {skill} in practice, and how do you design firmware so those failures are safe?",
-    "keywords": ["timeout", "watchdog", "interrupt", "priority", "safe", "retry"]}
+   {
+    "text": "Walk me through how you would bring up and debug a new sensor over {skill}. What tools do you reach for first?",
+    "keywords": [
+     "datasheet",
+     "oscilloscope",
+     "logic analyser",
+     "register",
+     "timing",
+     "driver"
+    ]
+   },
+   {
+    "text": "What goes wrong with {skill} in practice, and how do you design firmware so those failures are safe?",
+    "keywords": [
+     "timeout",
+     "watchdog",
+     "interrupt",
+     "priority",
+     "safe",
+     "retry"
+    ]
+   }
   ],
   "iot": [
-   {"text": "Explain how you would get sensor data from a device to the cloud using {skill}. What happens when the network drops?",
-    "keywords": ["broker", "reconnect", "buffer", "retry", "qos", "tls", "certificate"]},
-   {"text": "How would you secure a fleet of devices that use {skill}? What must never be stored in the firmware?",
-    "keywords": ["certificate", "key", "rotate", "tls", "least privilege", "policy"]}
+   {
+    "text": "Explain how you would get sensor data from a device to the cloud using {skill}. What happens when the network drops?",
+    "keywords": [
+     "broker",
+     "reconnect",
+     "buffer",
+     "retry",
+     "qos",
+     "tls",
+     "certificate"
+    ]
+   },
+   {
+    "text": "How would you secure a fleet of devices that use {skill}? What must never be stored in the firmware?",
+    "keywords": [
+     "certificate",
+     "key",
+     "rotate",
+     "tls",
+     "least privilege",
+     "policy"
+    ]
+   }
   ],
   "data": [
-   {"text": "Tell me about a time you used {skill} on messy real data. How did you validate that your results were right?",
-    "keywords": ["clean", "missing", "validation", "split", "baseline", "metric"]},
-   {"text": "How do you decide whether a model built with {skill} is actually good enough to use?",
-    "keywords": ["baseline", "metric", "validation", "overfit", "test set", "error"]}
+   {
+    "text": "Tell me about a time you used {skill} on messy real data. How did you validate that your results were right?",
+    "keywords": [
+     "clean",
+     "missing",
+     "validation",
+     "split",
+     "baseline",
+     "metric"
+    ]
+   },
+   {
+    "text": "How do you decide whether a model built with {skill} is actually good enough to use?",
+    "keywords": [
+     "baseline",
+     "metric",
+     "validation",
+     "overfit",
+     "test set",
+     "error"
+    ]
+   }
   ],
   "cloud": [
-   {"text": "Describe a system you ran on {skill}. How did you keep it reliable and how did you know when it broke?",
-    "keywords": ["monitoring", "alert", "log", "backup", "deploy", "rollback"]},
-   {"text": "How do you keep costs and permissions under control when working with {skill}?",
-    "keywords": ["least privilege", "iam", "budget", "cost", "policy", "tag"]}
+   {
+    "text": "Describe a system you ran on {skill}. How did you keep it reliable and how did you know when it broke?",
+    "keywords": [
+     "monitoring",
+     "alert",
+     "log",
+     "backup",
+     "deploy",
+     "rollback"
+    ]
+   },
+   {
+    "text": "How do you keep costs and permissions under control when working with {skill}?",
+    "keywords": [
+     "least privilege",
+     "iam",
+     "budget",
+     "cost",
+     "policy",
+     "tag"
+    ]
+   }
   ],
   "web": [
-   {"text": "How would you design and test an API with {skill}? What makes an API easy to consume?",
-    "keywords": ["endpoint", "status code", "validation", "test", "documentation", "version"]}
+   {
+    "text": "How would you design and test an API with {skill}? What makes an API easy to consume?",
+    "keywords": [
+     "endpoint",
+     "status code",
+     "validation",
+     "test",
+     "documentation",
+     "version"
+    ]
+   }
   ],
   "mobile": [
-   {"text": "Tell me about an app you built with {skill}. How did it behave offline and how did you test it?",
-    "keywords": ["offline", "state", "cache", "test", "release", "sync"]}
+   {
+    "text": "Tell me about an app you built with {skill}. How did it behave offline and how did you test it?",
+    "keywords": [
+     "offline",
+     "state",
+     "cache",
+     "test",
+     "release",
+     "sync"
+    ]
+   }
   ],
   "control": [
-   {"text": "Explain how you would tune a controller using {skill} for a slow thermal process. What are the risks of overshoot?",
-    "keywords": ["gain", "overshoot", "settling", "steady state", "model", "safety", "limit"]}
+   {
+    "text": "Explain how you would tune a controller using {skill} for a slow thermal process. What are the risks of overshoot?",
+    "keywords": [
+     "gain",
+     "overshoot",
+     "settling",
+     "steady state",
+     "model",
+     "safety",
+     "limit"
+    ]
+   }
   ],
   "process": [
-   {"text": "How do you use {skill} in your day-to-day work, and what difference has it made?",
-    "keywords": ["review", "branch", "test", "document", "team", "every"]}
+   {
+    "text": "How do you use {skill} in your day-to-day work, and what difference has it made?",
+    "keywords": [
+     "review",
+     "branch",
+     "test",
+     "document",
+     "team",
+     "every"
+    ]
+   }
   ]
  },
  "by_skill": {
-  "mqtt": {"text": "In MQTT, what do QoS levels, retained messages and the last-will message give you, and when would you use each?",
-           "keywords": ["qos", "retained", "last will", "broker", "offline", "subscribe"]},
-  "freertos": {"text": "In a FreeRTOS firmware with several tasks sharing sensor state, how do you avoid races and priority problems?",
-               "keywords": ["mutex", "queue", "priority", "inversion", "semaphore", "task"]},
-  "pid control": {"text": "Explain the three terms of a PID controller and what anti-windup protects against.",
-                  "keywords": ["proportional", "integral", "derivative", "windup", "saturation", "overshoot"]},
-  "sql": {"text": "How would you find the ten customers with the fastest-growing monthly spend using SQL?",
-          "keywords": ["group by", "window", "join", "order by", "lag", "month"]},
-  "docker": {"text": "What problem does Docker solve for a small team, and what should never go into an image?",
-             "keywords": ["reproducible", "image", "layer", "secret", "environment", "volume"]},
-  "scikit-learn": {"text": "Describe how you would set up a scikit-learn pipeline with cross-validation so there is no data leakage.",
-                   "keywords": ["pipeline", "fit", "transform", "cross-validation", "leakage", "split"]},
-  "esp32": {"text": "Compare the ESP32's Wi-Fi, deep sleep and dual-core features and how they affect a battery-powered sensor node.",
-            "keywords": ["deep sleep", "wake", "core", "wifi", "power", "rtc"]},
-  "aws": {"text": "You have a telemetry stream from a thousand devices. Which AWS services would you choose and why?",
-          "keywords": ["iot core", "lambda", "dynamodb", "s3", "cost", "rule"]}
+  "mqtt": {
+   "text": "In MQTT, what do QoS levels, retained messages and the last-will message give you, and when would you use each?",
+   "keywords": [
+    "qos",
+    "retained",
+    "last will",
+    "broker",
+    "offline",
+    "subscribe"
+   ]
+  },
+  "freertos": {
+   "text": "In a FreeRTOS firmware with several tasks sharing sensor state, how do you avoid races and priority problems?",
+   "keywords": [
+    "mutex",
+    "queue",
+    "priority",
+    "inversion",
+    "semaphore",
+    "task"
+   ]
+  },
+  "pid control": {
+   "text": "Explain the three terms of a PID controller and what anti-windup protects against.",
+   "keywords": [
+    "proportional",
+    "integral",
+    "derivative",
+    "windup",
+    "saturation",
+    "overshoot"
+   ]
+  },
+  "sql": {
+   "text": "How would you find the ten customers with the fastest-growing monthly spend using SQL?",
+   "keywords": [
+    "group by",
+    "window",
+    "join",
+    "order by",
+    "lag",
+    "month"
+   ]
+  },
+  "docker": {
+   "text": "What problem does Docker solve for a small team, and what should never go into an image?",
+   "keywords": [
+    "reproducible",
+    "image",
+    "layer",
+    "secret",
+    "environment",
+    "volume"
+   ]
+  },
+  "scikit-learn": {
+   "text": "Describe how you would set up a scikit-learn pipeline with cross-validation so there is no data leakage.",
+   "keywords": [
+    "pipeline",
+    "fit",
+    "transform",
+    "cross-validation",
+    "leakage",
+    "split"
+   ]
+  },
+  "esp32": {
+   "text": "Compare the ESP32's Wi-Fi, deep sleep and dual-core features and how they affect a battery-powered sensor node.",
+   "keywords": [
+    "deep sleep",
+    "wake",
+    "core",
+    "wifi",
+    "power",
+    "rtc"
+   ]
+  },
+  "aws": {
+   "text": "You have a telemetry stream from a thousand devices. Which AWS services would you choose and why?",
+   "keywords": [
+    "iot core",
+    "lambda",
+    "dynamodb",
+    "s3",
+    "cost",
+    "rule"
+   ]
+  },
+  "git": {
+   "text": "Describe your branching and code-review workflow in git. What goes into a good commit?",
+   "keywords": [
+    "branch",
+    "pull request",
+    "review",
+    "commit",
+    "small",
+    "message"
+   ]
+  },
+  "react": {
+   "text": "How do you manage state in a React app, and when does a component re-render?",
+   "keywords": [
+    "state",
+    "props",
+    "hook",
+    "re-render",
+    "memo",
+    "context"
+   ]
+  },
+  "flutter": {
+   "text": "How do you structure a Flutter app so that UI, state and data access stay separate?",
+   "keywords": [
+    "widget",
+    "state",
+    "provider",
+    "repository",
+    "stream",
+    "test"
+   ]
+  },
+  "firebase": {
+   "text": "What can go wrong with Firebase Realtime Database security rules, and how do you test them?",
+   "keywords": [
+    "rules",
+    "auth",
+    "read",
+    "write",
+    "emulator",
+    "test"
+   ]
+  },
+  "airflow": {
+   "text": "How do you design an Airflow DAG so that a failed run can be retried safely?",
+   "keywords": [
+    "idempotent",
+    "retry",
+    "task",
+    "schedule",
+    "backfill",
+    "sensor"
+   ]
+  },
+  "kubernetes": {
+   "text": "Walk me through what happens when a pod keeps restarting in Kubernetes. How do you debug it?",
+   "keywords": [
+    "logs",
+    "describe",
+    "liveness",
+    "resources",
+    "crashloop",
+    "events"
+   ]
+  },
+  "opencv": {
+   "text": "How would you count objects on a conveyor belt with OpenCV without a neural network?",
+   "keywords": [
+    "threshold",
+    "contour",
+    "morphology",
+    "background",
+    "blur",
+    "calibrate"
+   ]
+  },
+  "yolo": {
+   "text": "Explain how you would evaluate a YOLO detector honestly: which metric, which data, which failure cases?",
+   "keywords": [
+    "map",
+    "iou",
+    "test set",
+    "false positive",
+    "confidence",
+    "class"
+   ]
+  },
+  "selenium": {
+   "text": "How do you keep a Selenium test suite from becoming flaky?",
+   "keywords": [
+    "wait",
+    "selector",
+    "page object",
+    "retry",
+    "isolation",
+    "data"
+   ]
+  },
+  "plc": {
+   "text": "How do you commission a PLC-controlled process safely, and what belongs in the interlock logic?",
+   "keywords": [
+    "interlock",
+    "safety",
+    "io",
+    "test",
+    "simulation",
+    "alarm"
+   ]
+  },
+  "terraform": {
+   "text": "How do you manage Terraform state and secrets for a team, and how do you review a plan?",
+   "keywords": [
+    "state",
+    "backend",
+    "lock",
+    "plan",
+    "module",
+    "variable"
+   ]
+  },
+  "tls": {
+   "text": "What does TLS protect on a device-to-broker link, and what does it not protect?",
+   "keywords": [
+    "certificate",
+    "encrypt",
+    "authentication",
+    "ca",
+    "expiry",
+    "firmware"
+   ]
+  },
+  "pandas": {
+   "text": "Describe a pandas workflow for cleaning a messy CSV export: what do you check first?",
+   "keywords": [
+    "dtype",
+    "missing",
+    "duplicate",
+    "index",
+    "groupby",
+    "merge"
+   ]
+  },
+  "linux": {
+   "text": "A service on a Linux gateway stops responding at night. How do you find out why?",
+   "keywords": [
+    "logs",
+    "journalctl",
+    "memory",
+    "cron",
+    "systemd",
+    "disk"
+   ]
+  },
+  "fastapi": {
+   "text": "How do you validate input and handle errors in a FastAPI service so clients get useful responses?",
+   "keywords": [
+    "pydantic",
+    "status code",
+    "exception",
+    "dependency",
+    "test",
+    "schema"
+   ]
+  }
  },
  "gap": [
-  {"text": "The posting asks for {skill}, which I do not see on your CV. How would you close that gap in the first three months?",
-   "keywords": ["learn", "course", "project", "similar", "practice", "weeks"]}
+  {
+   "text": "The posting asks for {skill}, which I do not see on your CV. How would you close that gap in the first three months?",
+   "keywords": [
+    "learn",
+    "course",
+    "project",
+    "similar",
+    "practice",
+    "weeks"
+   ]
+  }
  ],
  "behavioural": [
-  {"text": "Tell me about a time something you built failed in use. What did you change afterwards?",
-   "keywords": ["failed", "root cause", "fixed", "test", "learned", "prevent"]},
-  {"text": "Describe a disagreement with a teammate about a technical decision and how it was resolved.",
-   "keywords": ["listened", "data", "trade-off", "agreed", "decision", "compromise"]}
+  {
+   "text": "Tell me about a time something you built failed in use. What did you change afterwards?",
+   "keywords": [
+    "failed",
+    "root cause",
+    "fixed",
+    "test",
+    "learned",
+    "prevent"
+   ]
+  },
+  {
+   "text": "Describe a disagreement with a teammate about a technical decision and how it was resolved.",
+   "keywords": [
+    "listened",
+    "data",
+    "trade-off",
+    "agreed",
+    "decision",
+    "compromise"
+   ]
+  }
  ]
 }
