@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Job recommender</title>
+<style>
+  :root { --bg:#fafafa; --fg:#1b1b1b; --muted:#666; --card:#fff; --line:#ddd; --ok:#2a7a3b; --warn:#a15c00; --acc:#1f5fbf; }
+  @media (prefers-color-scheme: dark) { :root { --bg:#141414; --fg:#eee; --muted:#aaa; --card:#1e1e1e; --line:#333; } }
+  body { margin:0; font:15px/1.45 system-ui, sans-serif; background:var(--bg); color:var(--fg); }
+  main { max-width:900px; margin:0 auto; padding:16px; }
+  h1 { font-size:1.4rem; margin:.2rem 0 .6rem; } h2 { font-size:1.1rem; margin:1.2rem 0 .4rem; }
+  textarea { width:100%; box-sizing:border-box; min-height:140px; padding:8px; border:1px solid var(--line); border-radius:6px; background:var(--card); color:var(--fg); font:inherit; }
+  button { padding:8px 14px; border:0; border-radius:6px; background:var(--acc); color:#fff; font:inherit; cursor:pointer; }
+  button[disabled] { opacity:.5; cursor:default; }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:8px; padding:12px; margin:8px 0; }
+  .muted { color:var(--muted); font-size:.9em; }
+  .tag { display:inline-block; padding:1px 7px; border-radius:10px; font-size:.85em; margin:2px 2px 0 0; border:1px solid var(--line); }
+  .ok { border-color:var(--ok); color:var(--ok); } .miss { border-color:var(--warn); color:var(--warn); }
+  .row { display:flex; gap:8px; align-items:center; flex-wrap:wrap; }
+  .score { font-weight:600; }
+  #chat .q { margin:.6rem 0 .3rem; } #chat .fb { padding-left:12px; border-left:3px solid var(--line); }
+</style>
+</head>
+<body>
+<main>
+  <h1>Job recommender + mock interview</h1>
+  <p class="muted">Paste CV text, get the top postings with matched and missing skills, then rehearse an interview for one of them. Demo data is synthetic (see README). Nothing you type leaves this server.</p>
+
+  <textarea id="cv" placeholder="Paste your CV text here (skills, projects, tools)..."></textarea>
+  <div class="row" style="margin-top:8px">
+    <label>Top <input id="k" type="number" value="5" min="1" max="20" style="width:4em"></label>
+    <button id="go">Recommend</button>
+    <span id="status" class="muted"></span>
+  </div>
+
+  <div id="skills"></div>
+  <div id="results"></div>
+
+  <section id="interview" hidden>
+    <h2 id="ititle"></h2>
+    <div id="chat"></div>
+    <div id="answerbox">
+      <textarea id="answer" placeholder="Your answer..." style="min-height:90px"></textarea>
+      <div class="row" style="margin-top:6px"><button id="send">Send answer</button><span id="progress" class="muted"></span></div>
+    </div>
+    <div id="summary"></div>
+  </section>
+</main>
+<script>
+const $ = (s) => document.querySelector(s);
+const esc = (s) => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const tags = (arr, cls) => arr.map(s => `<span class="tag ${cls}">${esc(s)}</span>`).join('');
+let session = null;
+
+async function post(url, body) {
+  const r = await fetch(url, {method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(body)});
+  if (!r.ok) throw new Error((await r.json()).detail || r.statusText);
+  return r.json();
+}
+
+$('#go').onclick = async () => {
+  $('#status').textContent = 'working...';
+  try {
+    const data = await post('/recommend', {cv_text: $('#cv').value, k: +$('#k').value});
+    $('#status').textContent = `embedder: ${data.embedder}`;
+    $('#skills').innerHTML = `<h2>Skills found in your CV</h2>${data.cv_skills.length ? tags(data.cv_skills, 'ok') : '<span class="muted">none from the vocabulary</span>'}`;
+    $('#results').innerHTML = '<h2>Top postings</h2>' + data.results.map(r => `
+      <div class="card">
+        <div class="row"><strong>${esc(r.posting.title)}</strong><span class="muted">${esc(r.posting.company)} · ${esc(r.posting.location)}</span>
+          <span class="score" style="margin-left:auto">${(100*r.score).toFixed(0)}</span></div>
+        <div class="muted">similarity ${r.similarity.toFixed(2)} · required-skill coverage ${(100*r.skill_coverage).toFixed(0)}%</div>
+        <div>${tags(r.matched_skills,'ok')}${tags(r.missing_skills,'miss')}${tags(r.bonus_skills,'')}</div>
+        <p class="muted">${esc(r.posting.description)}</p>
+        <button data-id="${esc(r.posting.id)}" class="start">Practise interview</button>
+      </div>`).join('');
+    document.querySelectorAll('.start').forEach(b => b.onclick = () => startInterview(b.dataset.id));
+  } catch (e) { $('#status').textContent = 'error: ' + e.message; }
+};
+
+async function startInterview(id) {
+  const data = await post('/interview/start', {posting_id: id, cv_text: $('#cv').value});
+  session = data;
+  $('#interview').hidden = false;
+  $('#ititle').textContent = `Mock interview: ${data.posting.title} at ${data.posting.company}`;
+  $('#chat').innerHTML = ''; $('#summary').innerHTML = ''; $('#answerbox').hidden = false;
+  showQuestion(data.question, data.total_questions);
+  $('#interview').scrollIntoView({behavior:'smooth'});
+}
+
+function showQuestion(q, total) {
+  $('#chat').insertAdjacentHTML('beforeend', `<div class="q"><strong>Q${q.id+1}${q.skill ? ' · '+esc(q.skill) : ''}:</strong> ${esc(q.text)}</div>`);
+  $('#progress').textContent = `question ${q.id+1} of ${total}`;
+  $('#answer').value = ''; $('#answer').focus();
+}
+
+$('#send').onclick = async () => {
+  if (!session) return;
+  const text = $('#answer').value; if (!text.trim()) return;
+  $('#send').disabled = true;
+  try {
+    const data = await post('/interview/answer', {session_id: session.session_id, answer: text});
+    const f = data.feedback;
+    $('#chat').insertAdjacentHTML('beforeend', `<div class="fb"><div><em>You:</em> ${esc(text)}</div>
+      <div><span class="score">${f.score}/100</span> ${esc(f.comment)}</div>
+      <div>${tags(f.covered,'ok')}${tags(f.missed,'miss')}</div>
+      ${f.follow_up ? `<div class="muted">Follow-up: ${esc(f.follow_up)}</div>` : ''}</div>`);
+    if (data.done) {
+      $('#answerbox').hidden = true;
+      $('#summary').innerHTML = `<div class="card"><strong>Summary</strong><p>${esc(data.summary.advice)}</p></div>`;
+    } else showQuestion(data.next_question, session.total_questions);
+  } catch (e) { alert(e.message); }
+  $('#send').disabled = false;
+};
+</script>
+</body>
+</html>
