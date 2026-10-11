@@ -262,7 +262,7 @@ ROLE_FAMILIES: dict[str, dict] = {
             "monitoring",
             "networking",
         ],
-        "nice": ["python", "azure", "gcp", "go", "redis", "tls", "git", "agile"],
+        "nice": ["python", "azure", "gcp", "golang", "redis", "tls", "git", "agile"],
         "work": [
             "run production infrastructure on AWS with infrastructure as code",
             "build CI/CD pipelines and keep deployments boring",

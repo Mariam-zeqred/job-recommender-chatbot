@@ -9,7 +9,7 @@ license = { text = "MIT" }
 where = ["src"]
 
 [tool.setuptools.package-data]
-jobrec = ["static/*.html", "data/*.json"]
+jobrec = ["static/*.html", "resources/*.json"]
 
 [tool.ruff]
 line-length = 100

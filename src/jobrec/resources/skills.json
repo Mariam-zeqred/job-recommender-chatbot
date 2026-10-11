@@ -63,12 +63,6 @@
   "category": "language",
   "aliases": []
  },
- "go": {
-  "category": "language",
-  "aliases": [
-   "golang"
-  ]
- },
  "matlab": {
   "category": "language",
   "aliases": [
@@ -624,5 +618,11 @@
  "german": {
   "category": "process",
   "aliases": []
+ },
+ "golang": {
+  "category": "language",
+  "aliases": [
+   "go lang"
+  ]
  }
 }
