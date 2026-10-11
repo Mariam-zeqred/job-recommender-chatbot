@@ -65,3 +65,11 @@ def test_eval_set_is_consistent(postings):
     for qid, rel in relevant.items():
         assert rel, f"{qid} has no relevant postings"
         assert rel <= ids
+
+
+def test_committed_labels_match_relevance_rule():
+    import build_eval_labels
+
+    assert build_eval_labels.build() == (ROOT / "data" / "eval" / "labels.csv").read_text(
+        encoding="utf-8"
+    )

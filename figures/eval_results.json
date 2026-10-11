@@ -1,0 +1,65 @@
+{
+ "chance_precision": 0.0834,
+ "results": [
+  {
+   "p@1": 1.0,
+   "p@5": 0.992,
+   "p@10": 0.984,
+   "mrr": 1.0,
+   "n_queries": 50,
+   "embedder": "tfidf",
+   "alpha": 0.0,
+   "seconds": 0.36
+  },
+  {
+   "p@1": 0.98,
+   "p@5": 0.98,
+   "p@10": 0.968,
+   "mrr": 0.982,
+   "n_queries": 50,
+   "embedder": "tfidf",
+   "alpha": 0.5,
+   "seconds": 0.35
+  },
+  {
+   "p@1": 0.94,
+   "p@5": 0.936,
+   "p@10": 0.908,
+   "mrr": 0.96,
+   "n_queries": 50,
+   "embedder": "tfidf",
+   "alpha": 1.0,
+   "seconds": 0.3
+  },
+  {
+   "p@1": 0.6,
+   "p@5": 0.568,
+   "p@10": 0.528,
+   "mrr": 0.6755,
+   "n_queries": 50,
+   "embedder": "glove",
+   "alpha": 0.0,
+   "seconds": 1.78
+  },
+  {
+   "p@1": 0.96,
+   "p@5": 0.956,
+   "p@10": 0.932,
+   "mrr": 0.97,
+   "n_queries": 50,
+   "embedder": "glove",
+   "alpha": 0.5,
+   "seconds": 1.83
+  },
+  {
+   "p@1": 0.94,
+   "p@5": 0.936,
+   "p@10": 0.908,
+   "mrr": 0.96,
+   "n_queries": 50,
+   "embedder": "glove",
+   "alpha": 1.0,
+   "seconds": 1.57
+  }
+ ]
+}
