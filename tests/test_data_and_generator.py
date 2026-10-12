@@ -73,3 +73,18 @@ def test_committed_labels_match_relevance_rule():
     assert build_eval_labels.build() == (ROOT / "data" / "eval" / "labels.csv").read_text(
         encoding="utf-8"
     )
+
+
+def test_notebook_is_up_to_date_and_cleared():
+    """notebooks/01_evaluation.ipynb is generated; it must match the builder and hold no outputs."""
+    import json
+    import sys
+    from pathlib import Path
+
+    root = Path(__file__).resolve().parents[1]
+    sys.path.insert(0, str(root / "scripts"))
+    from build_notebooks import OUT, build
+
+    nb = json.loads(OUT.read_text())
+    assert nb == build()
+    assert all(c["outputs"] == [] for c in nb["cells"] if c["cell_type"] == "code")
