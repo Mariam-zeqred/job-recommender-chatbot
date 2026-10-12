@@ -19,7 +19,7 @@
    "n_queries": 50,
    "embedder": "tfidf",
    "alpha": 0.5,
-   "seconds": 0.34
+   "seconds": 0.21
   },
   {
    "p@1": 0.94,
@@ -29,7 +29,7 @@
    "n_queries": 50,
    "embedder": "tfidf",
    "alpha": 1.0,
-   "seconds": 0.35
+   "seconds": 0.26
   },
   {
    "p@1": 0.6,
@@ -39,7 +39,7 @@
    "n_queries": 50,
    "embedder": "glove",
    "alpha": 0.0,
-   "seconds": 1.76
+   "seconds": 1.25
   },
   {
    "p@1": 0.96,
@@ -49,7 +49,7 @@
    "n_queries": 50,
    "embedder": "glove",
    "alpha": 0.5,
-   "seconds": 1.89
+   "seconds": 1.5
   },
   {
    "p@1": 0.94,
@@ -59,7 +59,73 @@
    "n_queries": 50,
    "embedder": "glove",
    "alpha": 1.0,
-   "seconds": 1.49
+   "seconds": 1.27
   }
- ]
+ ],
+ "judged": [
+  {
+   "p@10_family_rule": 0.98,
+   "p@10_strict": 0.83,
+   "p@10_lenient": 0.99,
+   "unjudged_pairs": 0,
+   "n_queries": 10,
+   "embedder": "tfidf",
+   "alpha": 0.0
+  },
+  {
+   "p@10_family_rule": 0.88,
+   "p@10_strict": 0.74,
+   "p@10_lenient": 0.96,
+   "unjudged_pairs": 0,
+   "n_queries": 10,
+   "embedder": "tfidf",
+   "alpha": 0.5
+  },
+  {
+   "p@10_family_rule": 0.77,
+   "p@10_strict": 0.66,
+   "p@10_lenient": 0.88,
+   "unjudged_pairs": 0,
+   "n_queries": 10,
+   "embedder": "tfidf",
+   "alpha": 1.0
+  },
+  {
+   "p@10_family_rule": 0.58,
+   "p@10_strict": 0.52,
+   "p@10_lenient": 0.72,
+   "unjudged_pairs": 0,
+   "n_queries": 10,
+   "embedder": "glove",
+   "alpha": 0.0
+  },
+  {
+   "p@10_family_rule": 0.82,
+   "p@10_strict": 0.71,
+   "p@10_lenient": 0.92,
+   "unjudged_pairs": 0,
+   "n_queries": 10,
+   "embedder": "glove",
+   "alpha": 0.5
+  },
+  {
+   "p@10_family_rule": 0.77,
+   "p@10_strict": 0.66,
+   "p@10_lenient": 0.88,
+   "unjudged_pairs": 0,
+   "n_queries": 10,
+   "embedder": "glove",
+   "alpha": 1.0
+  }
+ ],
+ "judged_agreement": {
+  "rule_relevant": {
+   "relevant": 159,
+   "arguable": 27
+  },
+  "rule_not_relevant": {
+   "arguable": 27,
+   "wrong": 42
+  }
+ }
 }

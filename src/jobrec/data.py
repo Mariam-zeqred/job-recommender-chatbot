@@ -75,3 +75,20 @@ def load_eval(eval_dir: Path | str = EVAL_DIR) -> tuple[pd.DataFrame, dict[str, 
     for row in labels.itertuples(index=False):
         relevant.setdefault(row.query_id, set()).add(row.posting_id)
     return queries, relevant
+
+
+JUDGEMENTS = ("relevant", "arguable", "wrong")
+
+
+def load_judged(eval_dir: Path | str = EVAL_DIR) -> dict[str, dict[str, str]]:
+    """Return {query_id: {posting_id: judgement}} from judged.csv, the hand-judged subset
+    (see data/eval/JUDGING.md). Only the pooled pairs are present; a pair that is absent was
+    never looked at, which is not the same as 'wrong'."""
+    df = pd.read_csv(Path(eval_dir) / "judged.csv", dtype=str, keep_default_na=False)
+    bad = set(df["judgement"]) - set(JUDGEMENTS)
+    if bad:
+        raise ValueError(f"judged.csv: unknown judgement values {sorted(bad)}")
+    out: dict[str, dict[str, str]] = {}
+    for row in df.itertuples(index=False):
+        out.setdefault(row.query_id, {})[row.posting_id] = row.judgement
+    return out

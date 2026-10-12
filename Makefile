@@ -27,9 +27,12 @@ eval:
 serve:
 	$(PY) -m uvicorn jobrec.api:app --app-dir src --reload --port 8000
 
-# "make check" is the smoke test: lint + unit tests + the data generator is reproducible + eval runs.
+# "make check" is the smoke test: lint + unit tests + generated data and labels are up to date +
+# every current top-10 pair of the judged queries has a judgement + eval runs.
 check: lint test
 	$(PY) scripts/generate_postings.py --check
+	$(PY) scripts/build_eval_labels.py --check
+	$(PY) scripts/build_judging_pool.py --check
 	$(PY) scripts/evaluate.py --quick
 
 clean:

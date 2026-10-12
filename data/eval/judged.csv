@@ -1,0 +1,256 @@
+query_id,posting_id,posting_family,posting_title,seniority,judgement,reason
+Q02,P0013,embedded_firmware,Embedded Software Engineer,Mid,relevant,"embedded firmware, junior/mid, C + UART/I2C match"
+Q02,P0022,embedded_firmware,Senior Embedded C Developer,Senior,arguable,right role but Senior (4-5 y) for a recent graduate
+Q02,P0032,embedded_firmware,Senior Embedded Firmware Engineer,Senior,arguable,right role but Senior (4-5 y) for a recent graduate
+Q02,P0049,embedded_firmware,Embedded Software Engineer,Mid,relevant,"embedded firmware, junior/mid, C + UART/I2C match"
+Q02,P0052,embedded_firmware,Embedded Software Engineer,Mid,relevant,"embedded firmware, junior/mid, C + UART/I2C match"
+Q02,P0060,iot_engineer,Junior Connected Devices Engineer,Junior,arguable,junior IoT role; CV has only C of the six required skills
+Q02,P0063,iot_engineer,Connected Devices Engineer,Mid,wrong,"IoT/cloud role (MQTT, Linux, AWS IoT, Python); CV is bare-metal only"
+Q02,P0076,iot_engineer,Junior Connected Devices Engineer,Junior,wrong,"IoT/cloud role (MQTT, Linux, AWS IoT, Python); CV is bare-metal only"
+Q02,P0082,iot_engineer,IoT Engineer,Mid,wrong,"IoT/cloud role (MQTT, Linux, AWS IoT, Python); CV is bare-metal only"
+Q02,P0092,embedded_firmware,Junior Embedded Software Engineer,Junior,relevant,"embedded firmware, junior/mid, C + UART/I2C match"
+Q02,P0099,iot_engineer,IoT Engineer,Mid,wrong,"IoT/cloud role (MQTT, Linux, AWS IoT, Python); CV is bare-metal only"
+Q02,P0127,embedded_firmware,Junior Embedded Firmware Engineer,Junior,relevant,"embedded firmware, junior/mid, C + UART/I2C match"
+Q02,P0140,embedded_firmware,Embedded Software Engineer,Mid,relevant,"embedded firmware, junior/mid, C + UART/I2C match"
+Q02,P0142,iot_engineer,Senior IoT Systems Developer,Senior,wrong,"IoT/cloud role (MQTT, Linux, AWS IoT, Python); CV is bare-metal only"
+Q02,P0150,embedded_firmware,Junior Embedded Software Engineer,Junior,relevant,"embedded firmware, junior/mid, C + UART/I2C match"
+Q02,P0203,iot_engineer,Junior IoT Systems Developer,Junior,arguable,junior IoT role needing C and sensors; Python and cloud side absent from CV
+Q02,P0209,iot_engineer,IoT Engineer,Mid,wrong,"IoT/cloud role (MQTT, Linux, AWS IoT, Python); CV is bare-metal only"
+Q02,P0220,embedded_firmware,Embedded Firmware Engineer,Mid,relevant,"embedded firmware, junior/mid, C + UART/I2C match"
+Q02,P0233,iot_engineer,Lead IoT Engineer,Lead,wrong,"IoT/cloud role (MQTT, Linux, AWS IoT, Python); CV is bare-metal only"
+Q02,P0299,embedded_firmware,Firmware Developer (MCU),Mid,relevant,"embedded firmware, junior/mid, C + UART/I2C match"
+Q02,P0316,embedded_firmware,Embedded Software Engineer,Mid,relevant,"embedded firmware, junior/mid, C + UART/I2C match"
+Q02,P0347,embedded_firmware,Embedded Software Engineer,Mid,relevant,"embedded firmware, junior/mid, C + UART/I2C match"
+Q02,P0358,embedded_firmware,Senior Embedded C Developer,Senior,arguable,right role but Senior (4-5 y) for a recent graduate
+Q02,P0423,embedded_firmware,Senior Embedded Firmware Engineer,Senior,arguable,right role but Senior (4-5 y) for a recent graduate
+Q02,P0429,embedded_firmware,Junior Embedded Firmware Engineer,Junior,relevant,"embedded firmware, junior/mid, C + UART/I2C match"
+Q02,P0462,embedded_firmware,Embedded Software Engineer,Mid,relevant,"embedded firmware, junior/mid, C + UART/I2C match"
+Q02,P0475,iot_engineer,Junior IoT Systems Developer,Junior,wrong,"IoT/cloud role (MQTT, Linux, AWS IoT, Python); CV is bare-metal only"
+Q02,P0498,embedded_firmware,Embedded Software Engineer,Mid,relevant,"embedded firmware, junior/mid, C + UART/I2C match"
+Q07,P0018,iot_engineer,Connected Devices Engineer,Mid,relevant,"IoT engineer role, junior/mid, ESP32/MQTT/sensors match"
+Q07,P0028,iot_engineer,IoT Solutions Engineer,Mid,relevant,"IoT engineer role, junior/mid, ESP32/MQTT/sensors match"
+Q07,P0060,iot_engineer,Junior Connected Devices Engineer,Junior,relevant,"IoT engineer role, junior/mid, ESP32/MQTT/sensors match"
+Q07,P0063,iot_engineer,Connected Devices Engineer,Mid,relevant,"IoT engineer role, junior/mid, ESP32/MQTT/sensors match"
+Q07,P0078,embedded_firmware,Embedded Firmware Engineer,Mid,arguable,embedded firmware role; CV has ESP32 C but no STM32/scope/bus-driver work
+Q07,P0079,backend_python,Senior Backend Developer (Python),Senior,wrong,Senior Django backend; no overlap
+Q07,P0082,iot_engineer,IoT Engineer,Mid,relevant,"IoT engineer role, junior/mid, ESP32/MQTT/sensors match"
+Q07,P0141,iot_engineer,Senior IoT Solutions Engineer,Senior,arguable,IoT role but Senior (4-5 y); CV describes one product
+Q07,P0167,mobile_flutter,Mobile App Engineer,Mid,arguable,"Flutter role with IoT real-time views; CV built one Flutter+Firebase dashboard, no Dart/REST stated"
+Q07,P0172,iot_engineer,IoT Solutions Engineer,Mid,relevant,"IoT engineer role, junior/mid, ESP32/MQTT/sensors match"
+Q07,P0175,iot_engineer,Senior IoT Engineer,Senior,arguable,IoT role but Senior (4-5 y); CV describes one product
+Q07,P0181,iot_engineer,Junior IoT Engineer,Junior,relevant,"IoT engineer role, junior/mid, ESP32/MQTT/sensors match"
+Q07,P0203,iot_engineer,Junior IoT Systems Developer,Junior,relevant,"IoT engineer role, junior/mid, ESP32/MQTT/sensors match"
+Q07,P0248,iot_engineer,Junior IoT Systems Developer,Junior,relevant,"IoT engineer role, junior/mid, ESP32/MQTT/sensors match"
+Q07,P0262,iot_engineer,Senior IoT Engineer,Senior,arguable,IoT role but Senior (4-5 y); CV describes one product
+Q07,P0303,mobile_flutter,Mobile Developer (Flutter),Mid,arguable,"Flutter role with IoT real-time views; CV built one Flutter+Firebase dashboard, no Dart/REST stated"
+Q07,P0311,mobile_flutter,Mobile App Engineer,Mid,arguable,"Flutter role with IoT real-time views; CV built one Flutter+Firebase dashboard, no Dart/REST stated"
+Q07,P0312,mobile_flutter,Junior Mobile App Engineer,Junior,arguable,"Flutter role with IoT real-time views; CV built one Flutter+Firebase dashboard, no Dart/REST stated"
+Q07,P0321,iot_engineer,IoT Engineer,Mid,relevant,"IoT engineer role, junior/mid, ESP32/MQTT/sensors match"
+Q07,P0345,mobile_flutter,Mobile Developer (Flutter),Mid,arguable,"Flutter role with IoT real-time views; CV built one Flutter+Firebase dashboard, no Dart/REST stated"
+Q07,P0364,iot_engineer,Connected Devices Engineer,Mid,relevant,"IoT engineer role, junior/mid, ESP32/MQTT/sensors match"
+Q07,P0385,mobile_flutter,Cross-platform Mobile Developer,Mid,arguable,"Flutter role with IoT real-time views; CV built one Flutter+Firebase dashboard, no Dart/REST stated"
+Q07,P0400,iot_engineer,Junior IoT Solutions Engineer,Junior,relevant,"IoT engineer role, junior/mid, ESP32/MQTT/sensors match"
+Q07,P0429,embedded_firmware,Junior Embedded Firmware Engineer,Junior,arguable,embedded firmware role; CV has ESP32 C but no STM32/scope/bus-driver work
+Q07,P0432,mobile_flutter,Senior Mobile App Engineer,Senior,wrong,Senior mobile engineer (4 y); CV is firmware-first with one dashboard
+Q07,P0438,iot_engineer,Senior IoT Systems Developer,Senior,arguable,IoT role but Senior (4-5 y); CV describes one product
+Q07,P0495,mobile_flutter,Junior Cross-platform Mobile Developer,Junior,arguable,"Flutter role with IoT real-time views; CV built one Flutter+Firebase dashboard, no Dart/REST stated"
+Q11,P0008,data_analyst,Senior Business Data Analyst,Senior,relevant,"analyst/analytics-engineer role, SQL + pandas + statistics match"
+Q11,P0015,data_analyst,Business Data Analyst,Mid,relevant,"analyst/analytics-engineer role, SQL + pandas + statistics match"
+Q11,P0040,data_analyst,Data Analyst,Mid,relevant,"analyst/analytics-engineer role, SQL + pandas + statistics match"
+Q11,P0042,data_analyst,Junior Analytics Engineer,Junior,relevant,"analyst/analytics-engineer role, SQL + pandas + statistics match"
+Q11,P0055,data_analyst,Junior Data Analyst,Mid,relevant,"analyst/analytics-engineer role, SQL + pandas + statistics match"
+Q11,P0077,data_analyst,Business Data Analyst,Mid,relevant,"analyst/analytics-engineer role, SQL + pandas + statistics match"
+Q11,P0085,data_analyst,Lead Junior Data Analyst,Lead,arguable,Lead (6 y) role; CV gives no seniority
+Q11,P0086,data_analyst,Senior Analytics Engineer,Senior,relevant,"analyst/analytics-engineer role, SQL + pandas + statistics match"
+Q11,P0094,data_analyst,Data Analyst,Mid,relevant,"analyst/analytics-engineer role, SQL + pandas + statistics match"
+Q11,P0100,data_analyst,Business Data Analyst,Mid,relevant,"analyst/analytics-engineer role, SQL + pandas + statistics match"
+Q11,P0134,data_analyst,Business Data Analyst,Mid,relevant,"analyst/analytics-engineer role, SQL + pandas + statistics match"
+Q11,P0135,data_analyst,Junior Analytics Engineer,Junior,relevant,"analyst/analytics-engineer role, SQL + pandas + statistics match"
+Q11,P0161,data_analyst,Business Data Analyst,Mid,relevant,"analyst/analytics-engineer role, SQL + pandas + statistics match"
+Q11,P0178,data_analyst,Junior Data Analyst,Mid,relevant,"analyst/analytics-engineer role, SQL + pandas + statistics match"
+Q11,P0184,data_analyst,Analytics Engineer,Mid,relevant,"analyst/analytics-engineer role, SQL + pandas + statistics match"
+Q11,P0230,data_analyst,Analytics Engineer,Mid,relevant,"analyst/analytics-engineer role, SQL + pandas + statistics match"
+Q11,P0239,qa_test,SDET,Mid,wrong,SDET / test automation; no overlap beyond Python
+Q11,P0280,data_analyst,Analytics Engineer,Mid,relevant,"analyst/analytics-engineer role, SQL + pandas + statistics match"
+Q11,P0291,data_analyst,Senior Analytics Engineer,Senior,relevant,"analyst/analytics-engineer role, SQL + pandas + statistics match"
+Q11,P0339,data_analyst,Junior Junior Data Analyst,Junior,relevant,"analyst/analytics-engineer role, SQL + pandas + statistics match"
+Q11,P0344,data_analyst,Junior Data Analyst,Junior,relevant,"analyst/analytics-engineer role, SQL + pandas + statistics match"
+Q11,P0357,data_analyst,Senior Analytics Engineer,Senior,relevant,"analyst/analytics-engineer role, SQL + pandas + statistics match"
+Q11,P0362,data_analyst,Data Analyst,Mid,relevant,"analyst/analytics-engineer role, SQL + pandas + statistics match"
+Q11,P0387,data_analyst,Senior Analytics Engineer,Senior,relevant,"analyst/analytics-engineer role, SQL + pandas + statistics match"
+Q11,P0441,data_analyst,Analytics Engineer,Mid,relevant,"analyst/analytics-engineer role, SQL + pandas + statistics match"
+Q16,P0002,ml_engineer,AI Engineer,Mid,relevant,"ML engineer role, scikit-learn/pandas match"
+Q16,P0025,data_engineer,Big Data Engineer,Mid,arguable,data-engineering role; CV has Python/Docker/AWS but no Spark/ETL
+Q16,P0045,data_engineer,Senior Data Platform Engineer,Senior,arguable,data-engineering role; CV has Python/Docker/AWS but no Spark/ETL
+Q16,P0064,control_systems,Automation Engineer,Mid,wrong,unrelated field
+Q16,P0070,ml_engineer,AI Engineer,Mid,relevant,"ML engineer role, scikit-learn/pandas match"
+Q16,P0078,embedded_firmware,Embedded Firmware Engineer,Mid,wrong,unrelated field
+Q16,P0081,qa_test,Software Tester,Mid,wrong,unrelated field
+Q16,P0113,ml_engineer,Applied Scientist,Mid,relevant,"ML engineer role, scikit-learn/pandas match"
+Q16,P0129,mobile_flutter,Mobile App Engineer,Mid,wrong,unrelated field
+Q16,P0151,ml_engineer,ML Engineer,Mid,relevant,"ML engineer role, scikit-learn/pandas match"
+Q16,P0250,ml_engineer,AI Engineer,Mid,relevant,"ML engineer role, scikit-learn/pandas match"
+Q16,P0265,ml_engineer,ML Engineer,Mid,relevant,"ML engineer role, scikit-learn/pandas match"
+Q16,P0275,ml_engineer,Senior Applied Scientist,Senior,relevant,"ML engineer role, scikit-learn/pandas match"
+Q16,P0288,data_engineer,Lead Data Platform Engineer,Lead,wrong,Lead data-platform/ETL role; wrong field and seniority
+Q16,P0331,cloud_devops,Junior DevOps Engineer,Junior,wrong,DevOps role; Docker/AWS overlap only
+Q16,P0348,ml_engineer,Junior ML Engineer,Junior,relevant,"ML engineer role, scikit-learn/pandas match"
+Q16,P0353,ml_engineer,ML Engineer,Mid,relevant,"ML engineer role, scikit-learn/pandas match"
+Q16,P0359,data_engineer,Lead ETL Developer,Lead,wrong,Lead data-platform/ETL role; wrong field and seniority
+Q16,P0371,ml_engineer,Senior ML Engineer,Senior,relevant,"ML engineer role, scikit-learn/pandas match"
+Q16,P0372,ml_engineer,Junior ML Engineer,Junior,relevant,"ML engineer role, scikit-learn/pandas match"
+Q16,P0373,iot_engineer,IoT Solutions Engineer,Mid,wrong,IoT field role (MQTT/TLS/sensors); none of the required skills in CV
+Q16,P0414,control_systems,Instrumentation and Control Engineer,Mid,wrong,unrelated field
+Q16,P0424,ml_engineer,Lead Machine Learning Engineer,Lead,arguable,Lead ML (7 y); CV gives no seniority
+Q16,P0461,data_engineer,Junior Data Platform Engineer,Junior,arguable,data-engineering role; CV has Python/Docker/AWS but no Spark/ETL
+Q16,P0476,ml_engineer,Senior ML Engineer,Senior,relevant,"ML engineer role, scikit-learn/pandas match"
+Q18,P0006,cloud_devops,Cloud Engineer,Mid,wrong,"cloud/network engineer (Terraform, Bash, networking); not a data role"
+Q18,P0026,cloud_devops,Site Reliability Engineer,Mid,arguable,"platform/SRE role: Kubernetes, monitoring, CI/CD all match but no data work"
+Q18,P0029,data_engineer,Data Platform Engineer,Mid,relevant,"data-engineering role, Spark/pipeline match"
+Q18,P0045,data_engineer,Senior Data Platform Engineer,Senior,relevant,"data-engineering role, Spark/pipeline match"
+Q18,P0056,cloud_devops,Junior Platform Engineer,Junior,arguable,"platform/SRE role: Kubernetes, monitoring, CI/CD all match but no data work"
+Q18,P0097,backend_python,"Junior Software Engineer, Backend",Junior,wrong,unrelated field
+Q18,P0126,data_engineer,Data Platform Engineer,Mid,relevant,"data-engineering role, Spark/pipeline match"
+Q18,P0128,iot_engineer,Connected Devices Engineer,Mid,wrong,unrelated field
+Q18,P0139,data_engineer,Junior Data Engineer,Junior,relevant,"data-engineering role, Spark/pipeline match"
+Q18,P0168,cloud_devops,Junior Cloud Engineer,Junior,arguable,"platform/SRE role: Kubernetes, monitoring, CI/CD all match but no data work"
+Q18,P0177,data_engineer,Junior Data Platform Engineer,Junior,relevant,"data-engineering role, Spark/pipeline match"
+Q18,P0182,data_engineer,ETL Developer,Mid,relevant,"data-engineering role, Spark/pipeline match"
+Q18,P0202,cloud_devops,Junior Platform Engineer,Junior,arguable,"platform/SRE role: Kubernetes, monitoring, CI/CD all match but no data work"
+Q18,P0221,cloud_devops,Site Reliability Engineer,Mid,arguable,"platform/SRE role: Kubernetes, monitoring, CI/CD all match but no data work"
+Q18,P0227,cloud_devops,Senior Platform Engineer,Senior,arguable,"platform/SRE role: Kubernetes, monitoring, CI/CD all match but no data work"
+Q18,P0246,computer_vision,Computer Vision Engineer,Mid,wrong,unrelated field
+Q18,P0249,data_engineer,Junior Data Engineer,Junior,relevant,"data-engineering role, Spark/pipeline match"
+Q18,P0255,cloud_devops,Senior Cloud Engineer,Senior,wrong,"cloud/network engineer (Terraform, Bash, networking); not a data role"
+Q18,P0285,cloud_devops,Senior AWS Solutions Engineer,Senior,wrong,"cloud/network engineer (Terraform, Bash, networking); not a data role"
+Q18,P0288,data_engineer,Lead Data Platform Engineer,Lead,arguable,Lead (6 y) data platform; CV gives no seniority
+Q18,P0292,data_engineer,Junior Data Platform Engineer,Junior,relevant,"data-engineering role, Spark/pipeline match"
+Q18,P0367,cloud_devops,DevOps Engineer,Mid,arguable,"platform/SRE role: Kubernetes, monitoring, CI/CD all match but no data work"
+Q18,P0374,data_engineer,Data Platform Engineer,Mid,relevant,"data-engineering role, Spark/pipeline match"
+Q18,P0407,cloud_devops,Lead Site Reliability Engineer,Lead,wrong,Lead SRE (7 y); wrong role and seniority
+Q18,P0423,embedded_firmware,Senior Embedded Firmware Engineer,Senior,wrong,unrelated field
+Q18,P0458,data_engineer,Data Platform Engineer,Mid,relevant,"data-engineering role, Spark/pipeline match"
+Q18,P0461,data_engineer,Junior Data Platform Engineer,Junior,relevant,"data-engineering role, Spark/pipeline match"
+Q18,P0479,cloud_devops,Junior Site Reliability Engineer,Junior,arguable,"platform/SRE role: Kubernetes, monitoring, CI/CD all match but no data work"
+Q18,P0482,data_engineer,Senior Data Platform Engineer,Senior,relevant,"data-engineering role, Spark/pipeline match"
+Q22,P0003,backend_python,Python Developer,Mid,relevant,"Python backend role, FastAPI/SQL/testing match"
+Q22,P0017,backend_python,Python Developer,Mid,relevant,"Python backend role, FastAPI/SQL/testing match"
+Q22,P0024,backend_python,"Software Engineer, Backend",Mid,relevant,"Python backend role, FastAPI/SQL/testing match"
+Q22,P0058,qa_test,Junior Software Tester,Junior,wrong,software tester role; the CV is a developer
+Q22,P0081,qa_test,Software Tester,Mid,wrong,software tester role; the CV is a developer
+Q22,P0093,backend_python,"Senior Software Engineer, Backend",Senior,relevant,"Python backend role, FastAPI/SQL/testing match"
+Q22,P0097,backend_python,"Junior Software Engineer, Backend",Junior,relevant,"Python backend role, FastAPI/SQL/testing match"
+Q22,P0130,backend_python,Junior Python Developer,Junior,relevant,"Python backend role, FastAPI/SQL/testing match"
+Q22,P0180,backend_python,Junior Python Developer,Junior,relevant,"Python backend role, FastAPI/SQL/testing match"
+Q22,P0185,backend_python,Backend Developer (Python),Mid,relevant,"Python backend role, FastAPI/SQL/testing match"
+Q22,P0189,backend_python,Junior Python Developer,Junior,relevant,"Python backend role, FastAPI/SQL/testing match"
+Q22,P0191,backend_python,"Senior Software Engineer, Backend",Senior,relevant,"Python backend role, FastAPI/SQL/testing match"
+Q22,P0268,backend_python,Lead Python Developer,Lead,arguable,Lead (7 y) backend; CV gives no seniority
+Q22,P0294,backend_python,Junior Python Developer,Junior,relevant,"Python backend role, FastAPI/SQL/testing match"
+Q22,P0310,backend_python,Senior Python Developer,Senior,relevant,"Python backend role, FastAPI/SQL/testing match"
+Q22,P0328,backend_python,Junior API Developer,Junior,relevant,"Python backend role, FastAPI/SQL/testing match"
+Q22,P0355,qa_test,Junior Software Tester,Junior,wrong,software tester role; the CV is a developer
+Q22,P0368,backend_python,Senior Python Developer,Senior,relevant,"Python backend role, FastAPI/SQL/testing match"
+Q22,P0381,backend_python,"Software Engineer, Backend",Mid,relevant,"Python backend role, FastAPI/SQL/testing match"
+Q22,P0386,backend_python,Senior Python Developer,Senior,relevant,"Python backend role, FastAPI/SQL/testing match"
+Q22,P0396,backend_python,Lead Backend Developer (Python),Lead,arguable,Lead (7 y) backend; CV gives no seniority
+Q22,P0399,backend_python,Backend Developer (Python),Mid,relevant,"Python backend role, FastAPI/SQL/testing match"
+Q22,P0413,backend_python,"Senior Software Engineer, Backend",Senior,relevant,"Python backend role, FastAPI/SQL/testing match"
+Q22,P0431,backend_python,Senior Backend Developer (Python),Senior,relevant,"Python backend role, FastAPI/SQL/testing match"
+Q32,P0001,mobile_flutter,Mobile App Engineer,Mid,relevant,"Flutter role, Flutter/Firebase match (Dart implied)"
+Q32,P0107,mobile_flutter,Mobile Developer (Flutter),Mid,relevant,"Flutter role, Flutter/Firebase match (Dart implied)"
+Q32,P0108,mobile_flutter,Mobile Developer (Flutter),Mid,relevant,"Flutter role, Flutter/Firebase match (Dart implied)"
+Q32,P0163,mobile_flutter,Flutter Developer,Mid,relevant,"Flutter role, Flutter/Firebase match (Dart implied)"
+Q32,P0165,mobile_flutter,Junior Flutter Developer,Junior,relevant,"Flutter role, Flutter/Firebase match (Dart implied)"
+Q32,P0167,mobile_flutter,Mobile App Engineer,Mid,relevant,"Flutter role, Flutter/Firebase match (Dart implied)"
+Q32,P0169,mobile_flutter,Flutter Developer,Mid,relevant,"Flutter role, Flutter/Firebase match (Dart implied)"
+Q32,P0174,mobile_flutter,Mobile Developer (Flutter),Mid,relevant,"Flutter role, Flutter/Firebase match (Dart implied)"
+Q32,P0176,mobile_flutter,Junior Flutter Developer,Junior,relevant,"Flutter role, Flutter/Firebase match (Dart implied)"
+Q32,P0186,mobile_flutter,Junior Mobile App Engineer,Junior,relevant,"Flutter role, Flutter/Firebase match (Dart implied)"
+Q32,P0196,mobile_flutter,Flutter Developer,Mid,relevant,"Flutter role, Flutter/Firebase match (Dart implied)"
+Q32,P0247,mobile_flutter,Lead Mobile App Engineer,Lead,arguable,Flutter role but Senior/Lead (4-6 y); CV describes two apps
+Q32,P0290,mobile_flutter,Senior Mobile Developer (Flutter),Senior,arguable,Flutter role but Senior/Lead (4-6 y); CV describes two apps
+Q32,P0303,mobile_flutter,Mobile Developer (Flutter),Mid,relevant,"Flutter role, Flutter/Firebase match (Dart implied)"
+Q32,P0311,mobile_flutter,Mobile App Engineer,Mid,relevant,"Flutter role, Flutter/Firebase match (Dart implied)"
+Q32,P0312,mobile_flutter,Junior Mobile App Engineer,Junior,relevant,"Flutter role, Flutter/Firebase match (Dart implied)"
+Q32,P0335,mobile_flutter,Mobile Developer (Flutter),Mid,relevant,"Flutter role, Flutter/Firebase match (Dart implied)"
+Q32,P0345,mobile_flutter,Mobile Developer (Flutter),Mid,relevant,"Flutter role, Flutter/Firebase match (Dart implied)"
+Q32,P0383,mobile_flutter,Mobile App Engineer,Mid,relevant,"Flutter role, Flutter/Firebase match (Dart implied)"
+Q32,P0389,mobile_flutter,Senior Mobile Developer (Flutter),Senior,arguable,Flutter role but Senior/Lead (4-6 y); CV describes two apps
+Q32,P0392,mobile_flutter,Junior Mobile Developer (Flutter),Junior,relevant,"Flutter role, Flutter/Firebase match (Dart implied)"
+Q32,P0425,mobile_flutter,Senior Mobile Developer (Flutter),Senior,arguable,Flutter role but Senior/Lead (4-6 y); CV describes two apps
+Q32,P0432,mobile_flutter,Senior Mobile App Engineer,Senior,arguable,Flutter role but Senior/Lead (4-6 y); CV describes two apps
+Q39,P0004,computer_vision,Senior Deep Learning Engineer (Vision),Senior,relevant,"vision role, OpenCV/YOLO/Python match"
+Q39,P0023,iot_engineer,Connected Devices Engineer,Mid,wrong,IoT connectivity role; only ESP32/Python overlap
+Q39,P0030,computer_vision,Junior Perception Engineer,Junior,relevant,"vision role, OpenCV/YOLO/Python match"
+Q39,P0047,computer_vision,Senior Computer Vision Engineer,Senior,relevant,"vision role, OpenCV/YOLO/Python match"
+Q39,P0062,computer_vision,Deep Learning Engineer (Vision),Mid,relevant,"vision role, OpenCV/YOLO/Python match"
+Q39,P0075,computer_vision,Junior Vision Systems Engineer,Junior,relevant,"vision role, OpenCV/YOLO/Python match"
+Q39,P0084,computer_vision,Junior Perception Engineer,Junior,relevant,"vision role, OpenCV/YOLO/Python match"
+Q39,P0098,computer_vision,Lead Perception Engineer,Lead,arguable,Lead perception (6-7 y); CV gives no seniority
+Q39,P0110,computer_vision,Senior Vision Systems Engineer,Senior,relevant,"vision role, OpenCV/YOLO/Python match"
+Q39,P0164,computer_vision,Junior Perception Engineer,Junior,relevant,"vision role, OpenCV/YOLO/Python match"
+Q39,P0179,computer_vision,Computer Vision Engineer,Mid,relevant,"vision role, OpenCV/YOLO/Python match"
+Q39,P0216,computer_vision,Lead Perception Engineer,Lead,arguable,Lead perception (6-7 y); CV gives no seniority
+Q39,P0230,data_analyst,Analytics Engineer,Mid,wrong,unrelated field
+Q39,P0239,qa_test,SDET,Mid,wrong,unrelated field
+Q39,P0240,computer_vision,Junior Computer Vision Engineer,Junior,relevant,"vision role, OpenCV/YOLO/Python match"
+Q39,P0256,computer_vision,Junior Perception Engineer,Junior,relevant,"vision role, OpenCV/YOLO/Python match"
+Q39,P0266,computer_vision,Vision Systems Engineer,Mid,relevant,"vision role, OpenCV/YOLO/Python match"
+Q39,P0295,computer_vision,Senior Vision Systems Engineer,Senior,relevant,"vision role, OpenCV/YOLO/Python match"
+Q39,P0351,computer_vision,Perception Engineer,Mid,relevant,"vision role, OpenCV/YOLO/Python match"
+Q39,P0369,computer_vision,Junior Perception Engineer,Junior,relevant,"vision role, OpenCV/YOLO/Python match"
+Q39,P0418,computer_vision,Senior Computer Vision Engineer,Senior,relevant,"vision role, OpenCV/YOLO/Python match"
+Q39,P0433,computer_vision,Junior Perception Engineer,Junior,relevant,"vision role, OpenCV/YOLO/Python match"
+Q39,P0471,computer_vision,Senior Computer Vision Engineer,Senior,relevant,"vision role, OpenCV/YOLO/Python match"
+Q48,P0005,control_systems,Senior Instrumentation and Control Engineer,Senior,arguable,controls role but Senior/Lead (4-7 y); CV describes one project
+Q48,P0034,control_systems,Lead Automation Engineer,Lead,arguable,controls role but Senior/Lead (4-7 y); CV describes one project
+Q48,P0044,control_systems,Controls Engineer,Mid,relevant,"controls role, junior/mid, PID/MATLAB/electronics match (PLC would be new)"
+Q48,P0064,control_systems,Automation Engineer,Mid,relevant,"controls role, junior/mid, PID/MATLAB/electronics match (PLC would be new)"
+Q48,P0072,control_systems,Controls Engineer,Mid,relevant,"controls role, junior/mid, PID/MATLAB/electronics match (PLC would be new)"
+Q48,P0073,control_systems,Controls Engineer,Mid,relevant,"controls role, junior/mid, PID/MATLAB/electronics match (PLC would be new)"
+Q48,P0103,control_systems,Senior Automation Engineer,Senior,arguable,controls role but Senior/Lead (4-7 y); CV describes one project
+Q48,P0149,control_systems,Senior Automation Engineer,Senior,arguable,controls role but Senior/Lead (4-7 y); CV describes one project
+Q48,P0157,control_systems,Instrumentation and Control Engineer,Mid,relevant,"controls role, junior/mid, PID/MATLAB/electronics match (PLC would be new)"
+Q48,P0192,control_systems,Senior Controls Engineer,Senior,arguable,controls role but Senior/Lead (4-7 y); CV describes one project
+Q48,P0225,control_systems,Controls Engineer,Mid,relevant,"controls role, junior/mid, PID/MATLAB/electronics match (PLC would be new)"
+Q48,P0243,control_systems,Junior Controls Engineer,Junior,relevant,"controls role, junior/mid, PID/MATLAB/electronics match (PLC would be new)"
+Q48,P0277,control_systems,Automation Engineer,Mid,relevant,"controls role, junior/mid, PID/MATLAB/electronics match (PLC would be new)"
+Q48,P0336,control_systems,Controls Engineer,Mid,relevant,"controls role, junior/mid, PID/MATLAB/electronics match (PLC would be new)"
+Q48,P0338,control_systems,Controls Engineer,Mid,relevant,"controls role, junior/mid, PID/MATLAB/electronics match (PLC would be new)"
+Q48,P0376,control_systems,Instrumentation and Control Engineer,Mid,relevant,"controls role, junior/mid, PID/MATLAB/electronics match (PLC would be new)"
+Q48,P0410,control_systems,Controls Engineer,Mid,relevant,"controls role, junior/mid, PID/MATLAB/electronics match (PLC would be new)"
+Q48,P0414,control_systems,Instrumentation and Control Engineer,Mid,relevant,"controls role, junior/mid, PID/MATLAB/electronics match (PLC would be new)"
+Q48,P0444,control_systems,Lead Controls Engineer,Lead,arguable,controls role but Senior/Lead (4-7 y); CV describes one project
+Q50,P0002,ml_engineer,AI Engineer,Mid,relevant,"ML engineer role, scikit-learn/pandas/Python match"
+Q50,P0015,data_analyst,Business Data Analyst,Mid,arguable,"business data analyst; pandas/Python/statistics fit, but not an ML role"
+Q50,P0029,data_engineer,Data Platform Engineer,Mid,wrong,data platform/ETL role; Python/AWS overlap only
+Q50,P0035,ml_engineer,AI Engineer,Mid,relevant,"ML engineer role, scikit-learn/pandas/Python match"
+Q50,P0039,qa_test,Senior Test Automation Engineer,Senior,wrong,unrelated field
+Q50,P0061,ml_engineer,Machine Learning Engineer,Mid,relevant,"ML engineer role, scikit-learn/pandas/Python match"
+Q50,P0070,ml_engineer,AI Engineer,Mid,relevant,"ML engineer role, scikit-learn/pandas/Python match"
+Q50,P0085,data_analyst,Lead Junior Data Analyst,Lead,wrong,Lead data analyst; wrong role and seniority
+Q50,P0113,ml_engineer,Applied Scientist,Mid,relevant,"ML engineer role, scikit-learn/pandas/Python match"
+Q50,P0124,ml_engineer,Junior Machine Learning Engineer,Junior,relevant,"ML engineer role, scikit-learn/pandas/Python match"
+Q50,P0140,embedded_firmware,Embedded Software Engineer,Mid,arguable,junior/mid embedded C role; CV writes C and TF Lite for MCUs but no driver/RTOS work stated
+Q50,P0151,ml_engineer,ML Engineer,Mid,relevant,"ML engineer role, scikit-learn/pandas/Python match"
+Q50,P0197,qa_test,Junior QA Engineer,Junior,wrong,unrelated field
+Q50,P0200,embedded_firmware,Junior Embedded Firmware Engineer,Junior,arguable,junior/mid embedded C role; CV writes C and TF Lite for MCUs but no driver/RTOS work stated
+Q50,P0203,iot_engineer,Junior IoT Systems Developer,Junior,arguable,"junior IoT role needing C, sensors, Python; plausible sideways move"
+Q50,P0244,ml_engineer,Senior Machine Learning Engineer,Senior,relevant,"ML engineer role, scikit-learn/pandas/Python match"
+Q50,P0250,ml_engineer,AI Engineer,Mid,relevant,"ML engineer role, scikit-learn/pandas/Python match"
+Q50,P0265,ml_engineer,ML Engineer,Mid,relevant,"ML engineer role, scikit-learn/pandas/Python match"
+Q50,P0267,ml_engineer,Junior Machine Learning Engineer,Junior,relevant,"ML engineer role, scikit-learn/pandas/Python match"
+Q50,P0270,qa_test,QA Engineer,Mid,wrong,unrelated field
+Q50,P0274,ml_engineer,Junior Machine Learning Engineer,Junior,relevant,"ML engineer role, scikit-learn/pandas/Python match"
+Q50,P0275,ml_engineer,Senior Applied Scientist,Senior,relevant,"ML engineer role, scikit-learn/pandas/Python match"
+Q50,P0282,ml_engineer,Senior Machine Learning Engineer,Senior,relevant,"ML engineer role, scikit-learn/pandas/Python match"
+Q50,P0312,mobile_flutter,Junior Mobile App Engineer,Junior,wrong,unrelated field
+Q50,P0333,embedded_firmware,Junior Embedded Firmware Engineer,Junior,arguable,junior/mid embedded C role; CV writes C and TF Lite for MCUs but no driver/RTOS work stated
+Q50,P0348,ml_engineer,Junior ML Engineer,Junior,relevant,"ML engineer role, scikit-learn/pandas/Python match"
+Q50,P0353,ml_engineer,ML Engineer,Mid,relevant,"ML engineer role, scikit-learn/pandas/Python match"
+Q50,P0355,qa_test,Junior Software Tester,Junior,wrong,unrelated field
+Q50,P0358,embedded_firmware,Senior Embedded C Developer,Senior,wrong,Senior embedded C (5 y); wrong seniority and focus
+Q50,P0424,ml_engineer,Lead Machine Learning Engineer,Lead,arguable,Lead ML (7 y); CV gives no seniority
+Q50,P0465,ml_engineer,Junior Machine Learning Engineer,Junior,relevant,"ML engineer role, scikit-learn/pandas/Python match"
+Q50,P0476,ml_engineer,Senior ML Engineer,Senior,relevant,"ML engineer role, scikit-learn/pandas/Python match"
