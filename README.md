@@ -35,9 +35,10 @@ default; the evaluation below compares α ∈ {0, 0.5, 1}.
 
 ```bash
 pip install -r requirements.txt
-make check                      # ruff + 34 pytest tests + data reproducibility + quick eval
+make check                      # ruff + 46 pytest tests + data/label freshness + quick eval
 make serve                      # http://localhost:8000  (API docs at /docs)
 make vectors && make eval       # optional: GloVe backend (66 MB download) + full evaluation
+pip install nbclient ipykernel && python scripts/build_notebooks.py --execute   # run the notebook once
 docker build -t jobrec . && docker run -p 8000:8000 jobrec   # not run in the sandbox (no daemon)
 ```
 
@@ -62,7 +63,12 @@ that posting asks eight questions: an intro, one per required skill (a skill-spe
 for 23 skills, e.g. MQTT QoS/retained/last-will, otherwise a category template), one
 "gap" question about a missing skill, and one behavioural question. Each answer gets a 0–100
 score (60 % expected-keyword coverage, 25 % length up to 60 words, 15 % for a concrete example),
-the keywords it missed, and a follow-up.
+the keywords it missed, a one-line tip ("Next time, mention qos and give one concrete example
+with a number.") and, below 75, a follow-up question. With an LLM provider switched on
+(`JOBREC_LLM_PROVIDER=http`, any OpenAI-compatible endpoint) one call per answer may reword the
+comment, the tip and the follow-up; the score and the keyword lists always come from the rule,
+and the response says `source: "http"` so the page can show which wording came from where.
+Any provider failure or unparseable reply falls back to the rule text.
 
 ## Evaluation (numbers from `make eval`, in `figures/eval_results.json`)
 
@@ -97,6 +103,43 @@ What the data supports:
   against cloud/DevOps postings; by the family rule that is wrong, by a human reading it is
   arguable. The label rule is the weak point of this evaluation (see Limitations).
 
+### Hand-judged subset
+
+The family rule is blunt, so 10 of the 50 queries were re-labelled by reading each posting
+against the CV (`data/eval/judged.csv`, criteria and who judged in `data/eval/JUDGING.md`). The
+10 were chosen to include the CVs that straddle families (incubator firmware + Flutter, ML at
+an IoT startup, data platform with Kubernetes, ML across embedded and data), so this subset is
+harder than the full set. Every top-10 pair of every configuration was judged (255 pairs:
+159 relevant, 54 arguable, 42 wrong); `make check` fails if a code change moves an unjudged
+posting into a top-10. "Strict" counts only `relevant`; "lenient" also counts `arguable`.
+
+| embedder | α | P@10 family rule | P@10 strict | P@10 lenient |
+|---|---|---|---|---|
+| tfidf | 0.0 | 0.98 | 0.83 | 0.99 |
+| tfidf | 0.5 | 0.88 | 0.74 | 0.96 |
+| tfidf | 1.0 | 0.77 | 0.66 | 0.88 |
+| glove | 0.0 | 0.58 | 0.52 | 0.72 |
+| glove | 0.5 | 0.82 | 0.71 | 0.92 |
+| glove | 1.0 | 0.77 | 0.66 | 0.88 |
+
+![precision@10 on the judged subset](figures/eval_judged_p10.png)
+
+- **The rule and the judgement never flatly contradict each other.** No pair the rule calls
+  relevant was judged `wrong`, and no pair it rejects was judged `relevant`; all 54
+  disagreements are `arguable`, split evenly: 27 the rule accepts and a human doubts, 27 the
+  rule rejects and a human would keep.
+- **The recommender is blind to seniority.** All 27 rule-accepted-but-arguable pairs are
+  Senior or Lead postings shown to CVs that read as graduate or single-project. Nothing in the
+  score looks at `years_min`, and the strict column pays for it.
+- **Skill coverage pulls in adjacent roles.** At α = 0.5 the data-platform CV (Q18) gets 9
+  cloud/SRE postings in its top 10, every one requiring exactly the four skills the extractor
+  found (Spark, Kubernetes, monitoring, CI/CD); a human calls 8 of them arguable, the rule calls
+  all 9 wrong. The same mechanism puts two software-tester postings in the backend CV's (Q22)
+  top 10. That is the cost of a coverage term over a small skill vocabulary.
+- Within a column the ordering of configurations is the same as on the full set, so the
+  relative conclusions above stand; the absolute numbers on this subset are lower because the
+  subset was chosen to be hard.
+
 The MiniLM sentence-embedding backend (`requirements-minilm.txt`) is implemented but **has no
 numbers here**: the model could not be downloaded in the sandbox. TODO.md item 1.
 
@@ -106,17 +149,22 @@ numbers here**: the model could not be downloaded in the sandbox. TODO.md item 1
 - Skill extraction is a dictionary of 91 skills with aliases, matched as whole phrases. It has
   no context: "C" matches the letter in "section C", "Go" is only recognised as "golang", and a
   skill spelt differently from every alias is missed. Its coverage bounds the explanations.
-- Relevance labels come from a rule (same role family), not from human judgement per pair; a
-  good cross-family recommendation counts as a miss.
+- Relevance labels come from a rule (same role family) for 50 queries, and from one reader's
+  judgement for 10 of them (`JUDGING.md`); that reader is the author of the queries, not a
+  recruiter, so the judged numbers are an opinion, not ground truth.
+- The ranking ignores seniority: a Lead posting and a Junior one with the same skills score
+  the same for every CV.
 - Interview scoring is keyword and length based. It rewards mentioning the right terms, not
-  being right. It is a rehearsal aid, not an assessment.
+  being right. It is a rehearsal aid, not an assessment. An LLM provider can reword the
+  feedback but was only exercised against a mock endpoint in the tests, never a live model.
 - Interview sessions live in process memory (capped at 200); restarting the server drops them.
 - Docker image not built in the sandbox (no daemon); MiniLM backend not exercised.
 
 ## Next steps
 
-See TODO.md: real postings dataset through the same loader, MiniLM numbers, a hand-judged
-subset of labels, the LLM feedback path, a Docker build check.
+See TODO.md: real postings dataset through the same loader, MiniLM numbers, a Docker build
+check, a seniority term in the score (`years_min` against years stated in the CV), and a second
+judge for `judged.csv`.
 
 ## Related
 
