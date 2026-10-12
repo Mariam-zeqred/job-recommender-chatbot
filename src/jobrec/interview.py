@@ -1,9 +1,11 @@
 """Mock interview for one posting: a question bank built from its requirements, rule-based
-answer scoring, and an optional LLM provider for follow-ups and feedback wording.
+answer scoring, and an optional LLM provider for feedback wording and follow-ups.
 
 The rules are simple on purpose: a candidate (or a professor) can read exactly why an answer
-scored what it did. The LLM, if enabled, only rewrites feedback and asks one follow-up; it
-never changes the score.
+scored what it did. The LLM, if enabled, is a presenter, not a judge: in one call per answer it
+may rewrite the comment in plain language, name one thing to say next time, and ask one
+follow-up. The score, the covered and missed keywords come from the rule and never change.
+Every LLM failure (no provider, network error, unparseable reply) falls back to rule-based text.
 """
 
 from __future__ import annotations
@@ -34,11 +36,13 @@ class Question:
 @dataclass(frozen=True)
 class Feedback:
     question_id: int
-    score: int  # 0-100
+    score: int  # 0-100, always from the rule
     covered: tuple[str, ...]
     missed: tuple[str, ...]
     comment: str
+    tip: str  # one thing to say next time
     follow_up: str | None = None
+    source: str = "rule"  # "rule", or the provider name when it rewrote comment/tip/follow-up
 
 
 @dataclass
@@ -142,7 +146,47 @@ def score_answer(question: Question, answer: str) -> Feedback:
         comment = "Too thin. An interviewer would expect you to talk about"
         comment += f" {', '.join(missed[:4])}" if missed else " the question"
         comment += " and to give one concrete example with numbers."
-    return Feedback(question.id, score, covered, missed, comment)
+    return Feedback(question.id, score, covered, missed, comment, rule_tip(missed, concrete))
+
+
+def rule_tip(missed: tuple[str, ...], concrete: bool) -> str:
+    """The one-line 'next time' advice the rule can give without an LLM."""
+    if missed and not concrete:
+        return f"Next time, mention {missed[0]} and give one concrete example with a number."
+    if missed:
+        return f"Next time, also cover {missed[0]}."
+    if not concrete:
+        return "Next time, add one concrete example with a number."
+    return "Keep this shape: the main points, then one concrete example."
+
+
+_REVIEW_SYSTEM = (
+    "You are a friendly technical interviewer giving feedback after one answer. The score and "
+    "the list of points covered and missed are fixed; do not grade or change them. Reply with "
+    "exactly three lines, each starting with its label:\n"
+    "FEEDBACK: the comment rewritten in plain language, at most two sentences\n"
+    "NEXT TIME: one specific thing the candidate should say next time, one sentence\n"
+    "FOLLOW-UP: one short follow-up question (max 25 words) about a point not covered, "
+    "or the word none if no follow-up is wanted\n"
+    "No preamble, no other lines."
+)
+_LABELS = ("FEEDBACK:", "NEXT TIME:", "FOLLOW-UP:")
+
+
+def parse_review(text: str | None) -> dict[str, str]:
+    """Pull the three labelled lines out of an LLM reply. Missing or empty lines are simply
+    absent from the result, so the caller keeps the rule-based text for them."""
+    out: dict[str, str] = {}
+    if not text:
+        return out
+    for raw in text.splitlines():
+        line = raw.strip().lstrip("-*• ").strip()
+        for label in _LABELS:
+            if line.upper().startswith(label):
+                value = line[len(label) :].strip().strip('"')
+                if value:
+                    out[label.rstrip(":").lower()] = value
+    return out
 
 
 class InterviewSession:
@@ -169,9 +213,7 @@ class InterviewSession:
         q = self.current_question()
         if q is None:
             raise RuntimeError("interview is finished")
-        fb = score_answer(q, text)
-        follow_up = self._follow_up(q, text, fb)
-        fb = Feedback(fb.question_id, fb.score, fb.covered, fb.missed, fb.comment, follow_up)
+        fb = self.review(q, text)
         self.feedback.append(fb)
         self.transcript += [
             {"role": "assistant", "content": q.text},
@@ -179,28 +221,44 @@ class InterviewSession:
         ]
         return fb
 
-    def _follow_up(self, q: Question, answer: str, fb: Feedback) -> str | None:
-        if fb.score >= 75 or not fb.missed:
-            return None
-        rule = f"Could you say more about {fb.missed[0]}?"
-        prompt: list[Message] = [
-            {
-                "role": "system",
-                "content": (
-                    "You are a friendly technical interviewer. Ask ONE short follow-up question "
-                    "(max 25 words) that probes what the candidate's answer did not cover. "
-                    "Do not grade, do not add preamble."
-                ),
-            },
+    def review(self, q: Question, answer: str) -> Feedback:
+        """Rule-based score, then (if a provider is on) one LLM call that may reword the
+        comment, the tip and the follow-up. The score never comes from the LLM."""
+        fb = score_answer(q, answer)
+        wants_follow_up = fb.score < 75 and bool(fb.missed)
+        follow_up = f"Could you say more about {fb.missed[0]}?" if wants_follow_up else None
+        comment, tip, source = fb.comment, fb.tip, "rule"
+        if not isinstance(self.provider, NullProvider) and answer.strip():
+            got = parse_review(self.provider.complete(self._review_prompt(q, answer, fb), 220))
+            if got:
+                source = self.provider.name
+                comment = got.get("feedback", comment)
+                tip = got.get("next time", tip)
+                llm_follow = got.get("follow-up")
+                if wants_follow_up and llm_follow and llm_follow.lower() != "none":
+                    follow_up = llm_follow
+        return Feedback(
+            fb.question_id, fb.score, fb.covered, fb.missed, comment, tip, follow_up, source
+        )
+
+    def _review_prompt(self, q: Question, answer: str, fb: Feedback) -> list[Message]:
+        wants_follow_up = fb.score < 75 and bool(fb.missed)
+        return [
+            {"role": "system", "content": _REVIEW_SYSTEM},
             {
                 "role": "user",
                 "content": (
-                    f"Role: {self.posting.title}\nQuestion: {q.text}\nAnswer: {answer}\n"
-                    f"Points not covered: {', '.join(fb.missed)}"
+                    f"Role: {self.posting.title} at {self.posting.company}\n"
+                    f"Question: {q.text}\n"
+                    f"Answer: {answer}\n"
+                    f"Rule-based score: {fb.score}/100\n"
+                    f"Points covered: {', '.join(fb.covered) or 'none'}\n"
+                    f"Points missed: {', '.join(fb.missed) or 'none'}\n"
+                    f"Rule-based comment: {fb.comment}\n"
+                    f"Follow-up wanted: {'yes' if wants_follow_up else 'no'}"
                 ),
             },
         ]
-        return self.provider.complete(prompt, max_tokens=60) or rule
 
     def summary(self) -> Summary:
         scored = [(fb, self.questions[fb.question_id]) for fb in self.feedback]

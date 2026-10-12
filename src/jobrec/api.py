@@ -99,7 +99,9 @@ class FeedbackOut(BaseModel):
     covered: list[str]
     missed: list[str]
     comment: str
+    tip: str
     follow_up: str | None
+    source: str  # "rule", or the LLM provider name when it reworded comment/tip/follow-up
 
 
 class SummaryOut(BaseModel):
@@ -216,7 +218,9 @@ def create_app(state: State | None = None) -> FastAPI:
                 covered=list(fb.covered),
                 missed=list(fb.missed),
                 comment=fb.comment,
+                tip=fb.tip,
                 follow_up=fb.follow_up,
+                source=fb.source,
             ),
             next_question=QuestionOut(id=q.id, kind=q.kind, skill=q.skill, text=q.text)
             if q

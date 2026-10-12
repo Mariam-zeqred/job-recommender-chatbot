@@ -104,7 +104,9 @@ $('#send').onclick = async () => {
     $('#chat').insertAdjacentHTML('beforeend', `<div class="fb"><div><em>You:</em> ${esc(text)}</div>
       <div><span class="score">${f.score}/100</span> ${esc(f.comment)}</div>
       <div>${tags(f.covered,'ok')}${tags(f.missed,'miss')}</div>
-      ${f.follow_up ? `<div class="muted">Follow-up: ${esc(f.follow_up)}</div>` : ''}</div>`);
+      <div class="muted">${esc(f.tip)}</div>
+      ${f.follow_up ? `<div class="muted">Follow-up: ${esc(f.follow_up)}</div>` : ''}
+      ${f.source !== 'rule' ? `<div class="muted">Wording by LLM provider "${esc(f.source)}"; score by rule.</div>` : ''}</div>`);
     if (data.done) {
       $('#answerbox').hidden = true;
       $('#summary').innerHTML = `<div class="card"><strong>Summary</strong><p>${esc(data.summary.advice)}</p></div>`;
