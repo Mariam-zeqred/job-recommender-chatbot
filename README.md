@@ -132,10 +132,10 @@ posting into a top-10. "Strict" counts only `relevant`; "lenient" also counts `a
   Senior or Lead postings shown to CVs that read as graduate or single-project. Nothing in the
   score looks at `years_min`, and the strict column pays for it.
 - **Skill coverage pulls in adjacent roles.** At α = 0.5 the data-platform CV (Q18) gets 9
-  cloud/SRE postings in its top 10, every one requiring exactly the four skills the extractor
-  found (Spark, Kubernetes, monitoring, CI/CD); a human calls 8 of them arguable, the rule calls
-  all 9 wrong. The same mechanism puts two software-tester postings in the backend CV's (Q22)
-  top 10. That is the cost of a coverage term over a small skill vocabulary.
+  cloud/SRE postings in its top 10, each requiring two or three of the four skills the extractor
+  found in it (Spark, Kubernetes, monitoring, CI/CD); a human calls 7 of them arguable and 2
+  wrong, the rule calls all 9 wrong. The same mechanism puts two software-tester postings in the
+  backend CV's (Q22) top 10. That is the cost of a coverage term over a small skill vocabulary.
 - Within a column the ordering of configurations is the same as on the full set, so the
   relative conclusions above stand; the absolute numbers on this subset are lower because the
   subset was chosen to be hard.

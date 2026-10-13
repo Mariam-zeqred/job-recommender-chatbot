@@ -95,7 +95,7 @@ CELLS: list[tuple[str, str]] = [
     (
         "code",
         "# Q18 (data platform CV) at alpha = 0.5: the family rule calls 9 of 10 wrong,\n"
-        "# a human calls 8 of them arguable. Read the reasons.\n"
+        "# a human calls 7 of them arguable and 2 wrong. Read the reasons.\n"
         "rec = Recommender(postings, TfidfEmbedder(), alpha=0.5)\n"
         "q18 = queries[queries.id == 'Q18'].iloc[0]\n"
         "for r in rec.recommend(q18.cv_text, 10):\n"
