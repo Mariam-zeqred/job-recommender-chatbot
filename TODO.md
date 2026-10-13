@@ -20,8 +20,9 @@ green. What is left needs a machine with internet access or Mariam's own judgeme
    `data/eval/JUDGING.md`). Overrule any row you disagree with, keep the reason honest, run
    `make eval` and `python scripts/build_notebooks.py --execute`, and update the README table
    if a number moves.
-5. **One live LLM run.** Set `JOBREC_LLM_PROVIDER=http` with any OpenAI-compatible endpoint in
-   `.env`, answer three interview questions, and check the page shows the reworded feedback
+5. **One live LLM run.** Set `JOBREC_LLM_PROVIDER=http` with any OpenAI-compatible endpoint
+   (export the variables from `.env`; the app does not read the file itself), answer three
+   interview questions, and check the page shows the reworded feedback
    with `source` ≠ `rule`. Only mock endpoints were used so far.
 
 Optional extension (see WALKTHROUGH "One thing you could extend"): a seniority term in the
