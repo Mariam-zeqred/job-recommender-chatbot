@@ -29,3 +29,11 @@ Optional extension (see WALKTHROUGH "One thing you could extend"): a seniority t
 score, measured on the judged subset.
 
 Not planned: persistent sessions, authentication, deployment. The repo is a demo.
+
+## Open (QC 2026-10-13)
+
+- `.env` is documented but never read: either add `python-dotenv` (two lines in `api.py`, one
+  in `requirements.txt`) or keep the "export it yourself" instruction. Decide, do not leave both.
+- pytest prints a Starlette deprecation: `starlette.testclient` with `httpx` is deprecated in
+  favour of `httpx2`. `make check` is green today; pin `starlette`/`fastapi` or switch to
+  `httpx2` before a future upgrade breaks the 5 API tests.
