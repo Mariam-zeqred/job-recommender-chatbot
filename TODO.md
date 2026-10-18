@@ -30,10 +30,12 @@ score, measured on the judged subset.
 
 Not planned: persistent sessions, authentication, deployment. The repo is a demo.
 
-## Open (QC 2026-10-13)
+## Closed on 2026-10-18 (the two open items from QC 2026-10-13)
 
-- `.env` is documented but never read: either add `python-dotenv` (two lines in `api.py`, one
-  in `requirements.txt`) or keep the "export it yourself" instruction. Decide, do not leave both.
-- pytest prints a Starlette deprecation: `starlette.testclient` with `httpx` is deprecated in
-  favour of `httpx2`. `make check` is green today; pin `starlette`/`fastapi` or switch to
-  `httpx2` before a future upgrade breaks the 5 API tests.
+- `.env`: decided to keep "export it yourself". No `python-dotenv`; `.env.example` and the
+  README "Configuration" paragraph both say that nothing reads the file, and the Dockerfile
+  sets its variables explicitly.
+- Starlette deprecation: `starlette.testclient` prefers `httpx2` and only falls back to `httpx`
+  with a `StarletteDeprecationWarning` (reproduced here with Starlette 1.9.0). `httpx2` is now
+  in `requirements.txt` for the test client; `HttpChatProvider` and its tests keep using
+  `httpx`. `make check` is warning-free with both installed.

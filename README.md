@@ -42,6 +42,12 @@ pip install nbclient ipykernel && python scripts/build_notebooks.py --execute   
 docker build -t jobrec . && docker run -p 8000:8000 jobrec   # not run in the sandbox (no daemon)
 ```
 
+Configuration is by environment variables only (`JOBREC_EMBEDDER`, `JOBREC_POSTINGS`,
+`JOBREC_LLM_PROVIDER`, `JOBREC_LLM_BASE_URL`, `JOBREC_LLM_MODEL`, `JOBREC_LLM_API_KEY`, all
+listed with their defaults in `.env.example`). Nothing reads a `.env` file: copy the example,
+edit it, and export it yourself (`set -a; . ./.env; set +a`) before `make serve`. The Dockerfile
+sets the two that matter. Every variable is optional and the demo runs with none of them set.
+
 Example API call:
 
 ```bash
